@@ -57,6 +57,14 @@ const getCSharpSeries0 = () => {
   return emojis;
 };
 
+const getGamemakerSeries0 = () => {
+  const emojis = [];
+  for (let i = 1; i <= 24; i++) {
+    emojis.push(`/LangGalMemes/characters/gamemaker_jameca/series_0/emoji_${i}.png`);
+  }
+  return emojis;
+};
+
 export const memes: Meme[] = [
   {
     id: 1,
@@ -123,6 +131,26 @@ export const memes: Meme[] = [
       source: 'Design inspired by r/MoeMorphism',
       url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/',
       copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+    }
+  },
+  {
+    id: 4,
+    name: 'Jameca',
+    techName: 'GameMaker',
+    tags: ['Engine', 'Game Dev'],
+    tagline: "Drag, drop, done! Game dev is for everyone! 🎮",
+    description: "A high school girl curious about programming and game development. While she starts with visual scripting, she's quickly learning the power of GML. Always enthusiastic about indie games!",
+    imageUrl: '/LangGalMemes/characters/gamemaker_jameca/cover.png',
+    color: '#6AB155',
+    emojiPacks: [
+      {
+        name: 'Series 0: Student',
+        items: getGamemakerSeries0()
+      }
+    ],
+    credits: {
+      source: 'Original Character',
+      copyright: 'AI Gen: Nano Banana Pro'
     }
   }
 ];
