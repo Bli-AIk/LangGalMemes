@@ -39,14 +39,20 @@ const getUnitySeries0 = () => {
 
 const getUnitySeries1 = () => {
   const emojis = [];
-  // Available files: 1-15, 21-24
   const indices = [
     ...Array.from({ length: 15 }, (_, i) => i + 1),
     21, 22, 23, 24
   ];
-  
   for (const i of indices) {
     emojis.push(`/LangGalMemes/characters/otori_kohaku/series_1/emoji_${i}.png`);
+  }
+  return emojis;
+};
+
+const getCSharpSeries0 = () => {
+  const emojis = [];
+  for (let i = 1; i <= 24; i++) {
+    emojis.push(`/LangGalMemes/characters/csharp_tan/series_0/emoji_${i}.png`);
   }
   return emojis;
 };
@@ -96,6 +102,26 @@ export const memes: Meme[] = [
       source: 'Unity Technologies Japan',
       url: 'https://unity-chan.com/',
       copyright: '© Unity Technologies Japan / Unity-chan is a trademark of Unity Technologies.'
+    }
+  },
+  {
+    id: 3,
+    name: 'Sharu',
+    techName: 'C#',
+    tags: ['Language', 'Enterprise'],
+    tagline: "Runtime Magic! Everything is an object... probably. ✨",
+    description: `A quiet, elegant magical girl powered by the .NET ecosystem. She casts powerful syntactic sugar spells and loves structured environments. "Garbage collection is an art form, you know."`,
+    imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png',
+    color: '#68217a', // C# Purple
+    emojiPacks: [
+      {
+        name: 'Series 0: Magick',
+        items: getCSharpSeries0()
+      }
+    ],
+    credits: {
+      source: 'AI Generated',
+      copyright: 'AI Gen: Nano Banana Pro / C# is a trademark of Microsoft.'
     }
   }
 ];
