@@ -33,11 +33,18 @@
             <span class="text-6xl font-black opacity-20 select-none">{{ meme.name.substring(0, 2).toUpperCase() }}</span>
           </div>
         </template>
+
+        <!-- Tech Name Badge (Bottom Right) -->
+        <div class="absolute bottom-3 right-3 z-20">
+          <span class="px-2 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded text-[10px] font-mono uppercase tracking-wider text-slate-300 shadow-lg group-hover:text-white group-hover:border-white/30 transition-colors">
+            {{ meme.techName }}
+          </span>
+        </div>
         
         <!-- Cyberpunk Overlay Action Hint -->
-        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 translate-y-2 group-hover:translate-y-0">
-           <div class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white">
-             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        <div class="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 translate-y-2 group-hover:translate-y-0">
+           <div class="w-8 h-8 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white">
+             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
            </div>
         </div>
       </div>
@@ -61,6 +68,13 @@
         <p class="text-sm text-slate-400 line-clamp-2 leading-relaxed font-light">
           {{ meme.description }}
         </p>
+        
+        <!-- Tags (Optional display in card body too) -->
+        <div class="mt-3 flex flex-wrap gap-1">
+          <span v-for="tag in meme.tags" :key="tag" class="text-[10px] px-1.5 py-0.5 bg-white/5 rounded text-slate-500 border border-white/5">
+            #{{ tag }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
