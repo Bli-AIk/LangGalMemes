@@ -26,10 +26,22 @@ const getRustEmojis = () => {
 
 const getUnitySeries0 = () => {
   const emojis = [];
-  // Based on file listing, assuming 1-24 based on commit log, but let's verify or use a safe range
-  // Commit log showed up to emoji_24.png
   for (let i = 1; i <= 24; i++) {
     emojis.push(`/characters/otori_kohaku/series_0/emoji_${i}.png`);
+  }
+  return emojis;
+};
+
+const getUnitySeries1 = () => {
+  const emojis = [];
+  // Available files: 1-15, 21-24
+  const indices = [
+    ...Array.from({ length: 15 }, (_, i) => i + 1),
+    21, 22, 23, 24
+  ];
+  
+  for (const i of indices) {
+    emojis.push(`/characters/otori_kohaku/series_1/emoji_${i}.png`);
   }
   return emojis;
 };
@@ -64,8 +76,11 @@ export const memes: Meme[] = [
       {
         name: 'Series 0: Core',
         items: getUnitySeries0()
+      },
+      {
+        name: 'Series 1: Mental State', // The "beautiful" mental state
+        items: getUnitySeries1()
       }
-      // Future Series 1 will go here
     ]
   }
 ];
