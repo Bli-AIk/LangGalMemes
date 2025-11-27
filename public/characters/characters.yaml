@@ -95,5 +95,6 @@
       pattern: 'emoji_{i}.png'
       range: [1, 24]
   credits:
-    source: 'Original Character'
-    copyright: 'AI Gen: Nano Banana Pro'
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
