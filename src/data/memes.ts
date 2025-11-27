@@ -24,7 +24,7 @@ export interface Meme {
 const getRustEmojis = () => {
   const emojis = [];
   for (let i = 1; i <= 29; i++) {
-    emojis.push(`/characters/rust_tan/emojis/emoji_${i}.png?v=2`);
+    emojis.push(`/LangGalMemes/characters/rust_tan/emojis/emoji_${i}.png?v=2`);
   }
   return emojis;
 };
@@ -32,7 +32,7 @@ const getRustEmojis = () => {
 const getUnitySeries0 = () => {
   const emojis = [];
   for (let i = 1; i <= 24; i++) {
-    emojis.push(`/characters/otori_kohaku/series_0/emoji_${i}.png`);
+    emojis.push(`/LangGalMemes/characters/otori_kohaku/series_0/emoji_${i}.png`);
   }
   return emojis;
 };
@@ -46,7 +46,7 @@ const getUnitySeries1 = () => {
   ];
   
   for (const i of indices) {
-    emojis.push(`/characters/otori_kohaku/series_1/emoji_${i}.png`);
+    emojis.push(`/LangGalMemes/characters/otori_kohaku/series_1/emoji_${i}.png`);
   }
   return emojis;
 };
@@ -59,7 +59,7 @@ export const memes: Meme[] = [
     tags: ['Language', 'Systems'],
     tagline: 'Huh? Segfault again? Pathetic. ♡',
     description: `A smug, correcting brat who loves to point out your sloppy memory management. "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."`,
-    imageUrl: '/characters/rust_tan/cover.png',
+    imageUrl: '/LangGalMemes/characters/rust_tan/cover.png',
     color: '#dea584',
     emojiPacks: [
       {
@@ -80,7 +80,7 @@ export const memes: Meme[] = [
     tags: ['Engine', 'Game Dev'],
     tagline: "Assets loaded! Let's build your dream world together! ☆",
     description: `The energetic poster girl of Unity Engine. She loves korokke and game dev! "C# scripting is super easy, I'll show you how!"`,
-    imageUrl: '/characters/otori_kohaku/cover.png',
+    imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png',
     color: '#222c37',
     emojiPacks: [
       {
