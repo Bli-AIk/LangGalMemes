@@ -6,6 +6,21 @@
       @click="!isDownloading && $emit('close')"
     ></div>
 
+    <!-- SVG Filters (Hidden) -->
+    <svg class="absolute w-0 h-0 overflow-hidden" aria-hidden="true">
+      <defs>
+        <filter id="sticker-outline" x="-50%" y="-50%" width="200%" height="200%">
+          <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" :radius="webStrokeRadius"></feMorphology>
+          <feFlood :flood-color="strokeColor" result="COLOR"></feFlood>
+          <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+          <feMerge>
+            <feMergeNode in="OUTLINE" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+
     <!-- Modal Content -->
     <div class="relative w-full max-w-5xl bg-slate-900 rounded-3xl border border-slate-700 shadow-2xl overflow-hidden flex flex-row h-[85vh] md:h-[90vh] animate-modal-in">
       
@@ -86,22 +101,53 @@
                 <h3 class="text-sm md:text-2xl font-bold text-white flex items-center gap-2">
                   <span class="text-secondary">📂</span> <span class="hidden md:inline">Sticker Gallery</span><span class="md:hidden">Gallery</span>
                 </h3>
-                <!-- Background Toggle -->
-                <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-1 border border-slate-700">
-                  <button 
-                    @click="bgMode = 'transparent'"
-                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
-                    :class="bgMode === 'transparent' ? 'bg-slate-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'"
-                  >
-                    Transparent
-                  </button>
-                  <button 
-                    @click="bgMode = 'white_bg'"
-                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
-                    :class="bgMode === 'white_bg' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-200'"
-                  >
-                    White BG
-                  </button>
+                
+                <!-- View Options -->
+                <div class="flex items-center gap-2">
+                  <!-- Background Toggle -->
+                  <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-1 border border-slate-700">
+                    <button 
+                      @click="bgMode = 'transparent'"
+                      class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                      :class="bgMode === 'transparent' ? 'bg-slate-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'"
+                    >
+                      Transparent
+                    </button>
+                    <button 
+                      @click="bgMode = 'white_bg'"
+                      class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                      :class="bgMode === 'white_bg' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-200'"
+                    >
+                      White BG
+                    </button>
+                  </div>
+
+                  <!-- Stroke Settings (Only for Transparent) -->
+                  <div v-if="bgMode === 'transparent'" class="hidden sm:flex items-center gap-1.5 bg-slate-800/80 rounded-lg p-1 px-2 border border-slate-700 animate-fade-in">
+                     <!-- Value Display -->
+                     <span class="text-[10px] font-mono font-bold text-slate-300 w-5 text-center select-none">
+                        {{ strokeWidth.toFixed(1) }}
+                     </span>
+                     
+                     <input 
+                       type="range" 
+                       v-model.number="strokeWidth" 
+                       min="0" 
+                       max="1" 
+                       step="0.05"
+                       class="w-14 h-4 bg-transparent appearance-none cursor-pointer [&::-webkit-slider-runnable-track]:h-1 [&::-webkit-slider-runnable-track]:bg-slate-600 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:-mt-1"
+                       title="Stroke Width"
+                     />
+                     
+                     <div class="w-px h-3 bg-slate-700 mx-0.5"></div>
+                     
+                     <input 
+                        type="color" 
+                        v-model="strokeColor"
+                        class="w-4 h-4 rounded cursor-pointer bg-transparent border-none p-0"
+                        title="Stroke Color"
+                     />
+                  </div>
                 </div>
               </div>
               
@@ -146,7 +192,7 @@
                            :src="emoji[bgMode]" 
                            loading="lazy" 
                            class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                           :class="{ 'filter-stroke-white': bgMode === 'transparent' }"
+                           :style="previewStyle"
                          />
                       </div>
                       <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -184,25 +230,47 @@ defineEmits(['close']);
 const isDownloading = ref(false);
 const downloadProgress = ref(0);
 const bgMode = ref<'transparent' | 'white_bg'>('transparent');
+const strokeWidth = ref(0.2);
+const strokeColor = ref('#ffffff');
 
 const totalCount = computed(() => {
   if (!props.meme.emojiPacks) return 0;
   return props.meme.emojiPacks.reduce((acc, pack) => acc + pack.items.length, 0);
 });
 
-const processImageWithStroke = async (blob: Blob): Promise<Blob> => {
-  if (bgMode.value !== 'transparent') return blob;
+const actualStrokeWidth = computed(() => {
+  return Math.round(strokeWidth.value * 25);
+});
 
-  const offset = 2; // Stroke width
+const webStrokeRadius = computed(() => {
+  // Apply 0.1 multiplier for preview visual as requested
+  const val = actualStrokeWidth.value * 0.1;
+  return val.toFixed(2);
+});
+
+const previewStyle = computed(() => {
+  if (bgMode.value !== 'transparent' || actualStrokeWidth.value <= 0) return {};
+  
+  return {
+    filter: 'url(#sticker-outline)'
+  };
+});
+
+const processImageWithStroke = async (blob: Blob, width: number, color: string): Promise<Blob> => {
+  if (bgMode.value !== 'transparent' || width <= 0) return blob;
+
   const img = new Image();
   const url = URL.createObjectURL(blob);
 
   return new Promise((resolve) => {
     img.onload = () => {
       const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Increase canvas size to accommodate stroke
+      const offset = width;
       canvas.width = img.width + (offset * 2);
       canvas.height = img.height + (offset * 2);
-      const ctx = canvas.getContext('2d');
 
       if (!ctx) {
         URL.revokeObjectURL(url);
@@ -210,26 +278,34 @@ const processImageWithStroke = async (blob: Blob): Promise<Blob> => {
         return;
       }
 
-      // Create silhouette
+      // Create silhouette for stroke
       const tempCanvas = document.createElement('canvas');
       tempCanvas.width = canvas.width;
       tempCanvas.height = canvas.height;
       const tempCtx = tempCanvas.getContext('2d');
 
       if (tempCtx) {
+        // Draw original image offset to center
         tempCtx.drawImage(img, offset, offset);
+        
+        // Turn it into a solid color silhouette
         tempCtx.globalCompositeOperation = 'source-in';
-        tempCtx.fillStyle = '#FFFFFF';
+        tempCtx.fillStyle = color;
         tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
 
-        // Draw 4 translations (Up, Down, Left, Right)
-        ctx.drawImage(tempCanvas, -offset, 0);
-        ctx.drawImage(tempCanvas, offset, 0);
-        ctx.drawImage(tempCanvas, 0, -offset);
-        ctx.drawImage(tempCanvas, 0, offset);
+        // Draw the silhouette in a circle to create stroke
+        const circumference = 2 * Math.PI * width;
+        const steps = Math.max(8, Math.ceil(circumference)); 
+        
+        for (let i = 0; i < steps; i++) {
+          const angle = (i / steps) * 2 * Math.PI;
+          const dx = Math.cos(angle) * width;
+          const dy = Math.sin(angle) * width;
+          ctx.drawImage(tempCanvas, dx, dy);
+        }
       }
 
-      // Draw original on top
+      // Draw original image on top (centered)
       ctx.globalCompositeOperation = 'source-over';
       ctx.drawImage(img, offset, offset);
 
@@ -254,6 +330,10 @@ const downloadPack = async (pack: EmojiPack) => {
   isDownloading.value = true;
   downloadProgress.value = 0;
 
+  // Capture current settings
+  const currentWidth = actualStrokeWidth.value;
+  const currentColor = strokeColor.value;
+
   try {
     const zip = new JSZip();
     const modeSuffix = bgMode.value === 'white_bg' ? 'WhiteBG' : 'Transparent';
@@ -274,7 +354,7 @@ const downloadPack = async (pack: EmojiPack) => {
         let blob = await response.blob();
         
         // Apply stroke if needed
-        blob = await processImageWithStroke(blob);
+        blob = await processImageWithStroke(blob, currentWidth, currentColor);
 
         const cleanUrl = url.split('?')[0];
         const filename = cleanUrl?.split('/').pop() || 'image.png';
@@ -308,6 +388,10 @@ const downloadAllAssets = async () => {
   isDownloading.value = true;
   downloadProgress.value = 0;
   
+  // Capture current settings
+  const currentWidth = actualStrokeWidth.value;
+  const currentColor = strokeColor.value;
+  
   try {
     const zip = new JSZip();
     const modeSuffix = bgMode.value === 'white_bg' ? 'WhiteBG' : 'Transparent';
@@ -325,8 +409,6 @@ const downloadAllAssets = async () => {
       
       if (!packFolder) continue;
 
-      // Download images sequentially to avoid network bottlenecks, or parallel for speed
-      // Let's do parallel batches to be nice but fast
       const promises = pack.items.map(async (item) => {
         const url = item[bgMode.value];
         try {
@@ -335,10 +417,9 @@ const downloadAllAssets = async () => {
           let blob = await response.blob();
           
           // Apply stroke if needed
-          blob = await processImageWithStroke(blob);
+          blob = await processImageWithStroke(blob, currentWidth, currentColor);
           
-          // Extract filename from URL (e.g., emoji_1.png)
-          // Remove query params if any
+          // Extract filename
           const cleanUrl = url.split('?')[0];
           const filename = cleanUrl?.split('/').pop() || 'image.png';
           
@@ -378,6 +459,15 @@ const downloadAllAssets = async () => {
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
@@ -389,10 +479,5 @@ const downloadAllAssets = async () => {
   border-radius: 4px;
 }
 
-.filter-stroke-white {
-  filter: drop-shadow(2px 0 0 white) 
-          drop-shadow(-2px 0 0 white) 
-          drop-shadow(0 2px 0 white) 
-          drop-shadow(0 -2px 0 white);
-}
+/* Removed .filter-stroke-white as it's now dynamic */
 </style>
