@@ -142,7 +142,12 @@
                       ></div>
                       
                       <div class="absolute inset-0 flex items-center justify-center p-1 md:p-2">
-                         <img :src="emoji[bgMode]" loading="lazy" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"/>
+                         <img 
+                           :src="emoji[bgMode]" 
+                           loading="lazy" 
+                           class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                           :class="{ 'filter-stroke-white': bgMode === 'transparent' }"
+                         />
                       </div>
                       <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                          <a :href="emoji[bgMode]" download target="_blank" class="p-1.5 md:p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-4 md:h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
@@ -185,6 +190,64 @@ const totalCount = computed(() => {
   return props.meme.emojiPacks.reduce((acc, pack) => acc + pack.items.length, 0);
 });
 
+const processImageWithStroke = async (blob: Blob): Promise<Blob> => {
+  if (bgMode.value !== 'transparent') return blob;
+
+  const offset = 2; // Stroke width
+  const img = new Image();
+  const url = URL.createObjectURL(blob);
+
+  return new Promise((resolve) => {
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width + (offset * 2);
+      canvas.height = img.height + (offset * 2);
+      const ctx = canvas.getContext('2d');
+
+      if (!ctx) {
+        URL.revokeObjectURL(url);
+        resolve(blob);
+        return;
+      }
+
+      // Create silhouette
+      const tempCanvas = document.createElement('canvas');
+      tempCanvas.width = canvas.width;
+      tempCanvas.height = canvas.height;
+      const tempCtx = tempCanvas.getContext('2d');
+
+      if (tempCtx) {
+        tempCtx.drawImage(img, offset, offset);
+        tempCtx.globalCompositeOperation = 'source-in';
+        tempCtx.fillStyle = '#FFFFFF';
+        tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+        // Draw 4 translations (Up, Down, Left, Right)
+        ctx.drawImage(tempCanvas, -offset, 0);
+        ctx.drawImage(tempCanvas, offset, 0);
+        ctx.drawImage(tempCanvas, 0, -offset);
+        ctx.drawImage(tempCanvas, 0, offset);
+      }
+
+      // Draw original on top
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.drawImage(img, offset, offset);
+
+      canvas.toBlob((newBlob) => {
+        URL.revokeObjectURL(url);
+        resolve(newBlob || blob);
+      }, 'image/png');
+    };
+
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      resolve(blob);
+    };
+
+    img.src = url;
+  });
+};
+
 const downloadPack = async (pack: EmojiPack) => {
   if (isDownloading.value) return;
 
@@ -208,7 +271,10 @@ const downloadPack = async (pack: EmojiPack) => {
       try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch ${url}`);
-        const blob = await response.blob();
+        let blob = await response.blob();
+        
+        // Apply stroke if needed
+        blob = await processImageWithStroke(blob);
 
         const cleanUrl = url.split('?')[0];
         const filename = cleanUrl?.split('/').pop() || 'image.png';
@@ -266,7 +332,10 @@ const downloadAllAssets = async () => {
         try {
           const response = await fetch(url);
           if (!response.ok) throw new Error(`Failed to fetch ${url}`);
-          const blob = await response.blob();
+          let blob = await response.blob();
+          
+          // Apply stroke if needed
+          blob = await processImageWithStroke(blob);
           
           // Extract filename from URL (e.g., emoji_1.png)
           // Remove query params if any
@@ -318,5 +387,12 @@ const downloadAllAssets = async () => {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #334155;
   border-radius: 4px;
+}
+
+.filter-stroke-white {
+  filter: drop-shadow(2px 0 0 white) 
+          drop-shadow(-2px 0 0 white) 
+          drop-shadow(0 2px 0 white) 
+          drop-shadow(0 -2px 0 white);
 }
 </style>
