@@ -243,8 +243,8 @@ const actualStrokeWidth = computed(() => {
 });
 
 const webStrokeRadius = computed(() => {
-  // Apply 0.1 multiplier for preview visual as requested
-  const val = actualStrokeWidth.value * 0.1;
+  // Apply 0.2 multiplier for preview visual as requested
+  const val = actualStrokeWidth.value * 0.15;
   return val.toFixed(2);
 });
 
