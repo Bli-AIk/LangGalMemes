@@ -6,7 +6,7 @@
 
 ![Preview](./preview.png)
 
-**LangGalMemes** — A dark, cyberpunk-styled gallery website for programming language Moe-anthropomorphism (Gijinka) memes.
+**LangGalMemes** — A gallery website for programming language Moe-anthropomorphism (Gijinka) memes.
 
 | English | Simplified Chinese        |
 |---------|---------------------------|
@@ -16,8 +16,9 @@
 
 **LangGalMemes** is a modern gallery built with Vue 3 and Tailwind CSS. It hosts a collection of AI-generated (Nano Banana Pro) sticker packs featuring personified tech characters.
 
-It solves the problem of finding high-quality, consistent "Tech-tan" memes by providing a centralized, searchable, and beautiful interface. Users can easily browse, preview, and download sticker packs for their favorite languages like **Rust-tan** and **Unity-chan**.
+I made this thing...... Just for fun, but there's no denying that it's not easy to find high-quality and stylistically consistent "Tech-tan" memes on the internet.
 
+Through this website, users can conveniently browse, preview, and download memes for their preferred programming languages or engines, such as **Rust-tan** and **Otori Kohaku** (Unity-chan).
 ## Features
 
 *   **Holographic 3D Cards**: Character cards with parallax tilt and holographic shine.
@@ -31,19 +32,19 @@ It solves the problem of finding high-quality, consistent "Tech-tan" memes by pr
 1.  **Install Dependencies**:
 
     ```bash
-    pnpm install
+    npm install
     ```
 
 2.  **Run Development Server**:
 
     ```bash
-    pnpm dev
+    npm run dev
     ```
 
 3.  **Build for Production**:
 
     ```bash
-    pnpm build
+    npm build
     ```
 
 ## License

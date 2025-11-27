@@ -6,7 +6,7 @@
 
 ![Preview](./preview.png)
 
-**LangGalMemes** — 一个暗黑赛博风格的静态网站，致力于展示和分享编程语言/引擎的娘化表情包。
+**LangGalMemes** — 一个致力于展示和分享 编程语言 / 引擎 的娘化表情包的静态网站。
 
 | English                | Simplified Chinese |
 |------------------------|--------------------|
@@ -16,7 +16,9 @@
 
 **LangGalMemes** 是一个基于 Vue 3 和 Tailwind CSS 构建的现代化画廊网站。它收录了一系列由 **Nano Banana Pro** AI 生成的编程语言拟人化形象（Tech-tan）及其配套表情包。
 
-它解决了寻找高质量、风格统一的“技术娘化”表情包难的问题。在这里，你可以轻松浏览 **Rust-tan** 的傲娇毒舌或 **Unity-chan** 的元气满满，并一键下载她们的表情包系列。
+我做了这个东西……只是为了好玩，但不可否认的是，在互联网上找到高质量且风格统一的 “Tech-tan” 表情包并不容易。 
+
+通过这个网站，用户可以方便地浏览、预览并下载他们喜欢的编程语言或引擎的表情包，例如 **Rust-tan** 和 **Otori Kohaku** (Unity-chan)。
 
 ## 功能
 
@@ -31,19 +33,19 @@
 1.  **安装依赖**:
 
     ```bash
-    pnpm install
+    npm install
     ```
 
 2.  **启动开发服务器**:
 
     ```bash
-    pnpm dev
+    npm run dev
     ```
 
 3.  **构建生产版本**:
 
     ```bash
-    pnpm build
+    npm build
     ```
 
 ## 许可证
