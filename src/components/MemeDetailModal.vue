@@ -22,7 +22,7 @@
       <div class="flex flex-col md:flex-row bg-gradient-to-br from-slate-800 to-slate-900 border-b border-slate-700 shrink-0">
         
         <!-- Left: Logo / Visual -->
-        <div class="w-full md:w-1/3 p-8 flex items-center justify-center bg-slate-800/50 relative overflow-hidden">
+        <div class="w-full md:w-1/3 p-4 md:p-8 flex items-center justify-center bg-slate-800/50 relative overflow-hidden">
           <!-- Background Deco -->
           <div class="absolute inset-0 opacity-10 pointer-events-none" :style="{ backgroundColor: meme.color }"></div>
           
@@ -30,56 +30,56 @@
             v-if="meme.imageUrl"
             :src="meme.imageUrl" 
             :alt="meme.name"
-            class="w-48 h-48 md:w-56 md:h-56 object-contain drop-shadow-2xl relative z-10 transform transition-transform hover:scale-105"
+            class="w-24 h-24 md:w-56 md:h-56 object-contain drop-shadow-2xl relative z-10 transform transition-transform hover:scale-105"
           />
-          <div v-else class="w-48 h-48 flex items-center justify-center rounded-full border-4 border-white/10 bg-white/5">
-             <span class="text-6xl font-black text-white/20">{{ meme.name.substring(0,2).toUpperCase() }}</span>
+          <div v-else class="w-24 h-24 md:w-56 md:h-56 flex items-center justify-center rounded-full border-4 border-white/10 bg-white/5">
+             <span class="text-3xl md:text-6xl font-black text-white/20">{{ meme.name.substring(0,2).toUpperCase() }}</span>
           </div>
         </div>
 
         <!-- Right: Info -->
-        <div class="w-full md:w-2/3 p-8 flex flex-col justify-center">
+        <div class="w-full md:w-2/3 p-4 md:p-8 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-2">
-            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-700 text-slate-300 border border-slate-600">
+            <span class="px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider bg-slate-700 text-slate-300 border border-slate-600">
               Character Info
             </span>
-            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600">
+            <span class="px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600">
               {{ meme.techName }}
             </span>
           </div>
-          <h2 class="text-4xl md:text-5xl font-heading font-black text-white mb-4 tracking-tight">
+          <h2 class="text-2xl md:text-5xl font-heading font-black text-white mb-2 md:mb-4 tracking-tight">
             {{ meme.name }}
           </h2>
-          <p class="text-lg font-medium mb-4" :style="{ color: meme.color }">{{ meme.tagline }}</p>
-          <p class="text-slate-400 leading-relaxed max-w-xl">{{ meme.description }}</p>
+          <p class="text-sm md:text-lg font-medium mb-2 md:mb-4" :style="{ color: meme.color }">{{ meme.tagline }}</p>
+          <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-xl line-clamp-3 md:line-clamp-none">{{ meme.description }}</p>
           
-          <div class="mt-8 flex flex-wrap gap-4 items-center">
+          <div class="mt-4 md:mt-8 flex flex-wrap gap-4 items-center">
             <button 
               @click="downloadAllAssets"
               :disabled="isDownloading"
-              class="px-6 py-3 bg-primary hover:bg-fuchsia-600 disabled:bg-slate-600 disabled:cursor-wait text-white rounded-xl font-bold transition-all shadow-lg shadow-primary/25 flex items-center gap-2 min-w-[200px] justify-center relative overflow-hidden"
+              class="px-4 py-2 md:px-6 md:py-3 bg-primary hover:bg-fuchsia-600 disabled:bg-slate-600 disabled:cursor-wait text-white rounded-xl font-bold transition-all shadow-lg shadow-primary/25 flex items-center gap-2 min-w-[160px] md:min-w-[200px] justify-center relative overflow-hidden text-sm md:text-base"
             >
               <!-- Loading State -->
               <template v-if="isDownloading">
-                <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 md:h-5 md:w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                <span class="text-sm">Zipping {{ downloadProgress }}%</span>
+                <span>Zipping {{ downloadProgress }}%</span>
                 <!-- Progress Bar Background -->
                 <div class="absolute bottom-0 left-0 h-1 bg-white/30 transition-all duration-300" :style="{ width: `${downloadProgress}%` }"></div>
               </template>
               
               <!-- Normal State -->
               <template v-else>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download All Packs
               </template>
             </button>
           </div>
 
           <!-- Credits Section -->
-          <div class="mt-6 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col gap-1">
+          <div class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-white/5 text-[10px] md:text-xs text-slate-500 flex flex-col gap-1">
             <div class="flex items-center gap-2">
               <span class="font-bold uppercase tracking-wider text-slate-400">Source:</span>
               <a v-if="meme.credits.url" :href="meme.credits.url" target="_blank" class="hover:text-primary transition-colors border-b border-transparent hover:border-primary truncate max-w-xs">
@@ -99,23 +99,23 @@
       <div class="flex-1 overflow-y-auto bg-dark-bg custom-scrollbar">
         
         <!-- Sticky Header -->
-        <div class="sticky top-0 z-10 bg-dark-bg border-b border-slate-800/50 px-8 py-4 shadow-lg shadow-black/20 flex justify-between items-center">
-          <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+        <div class="sticky top-0 z-10 bg-dark-bg border-b border-slate-800/50 px-4 py-2 md:px-8 md:py-4 shadow-lg shadow-black/20 flex justify-between items-center">
+          <h3 class="text-lg md:text-2xl font-bold text-white flex items-center gap-2">
             <span class="text-secondary">📂</span> Sticker Gallery
           </h3>
-          <span class="text-sm font-medium text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">
+          <span class="text-xs md:text-sm font-medium text-slate-400 bg-slate-800 px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-slate-700">
             {{ totalCount }} Items
           </span>
         </div>
         
         <!-- Grid container with padding -->
-        <div class="p-8 space-y-12">
+        <div class="p-4 md:p-8 space-y-6 md:space-y-12">
           
           <template v-if="meme.emojiPacks && meme.emojiPacks.length > 0">
             <div v-for="pack in meme.emojiPacks" :key="pack.name">
               <!-- Pack Header -->
-              <div class="flex items-center gap-4 mb-6">
-                 <h4 class="text-lg font-bold text-white/90 uppercase tracking-wider font-heading flex items-center gap-2">
+              <div class="flex items-center gap-4 mb-3 md:mb-6">
+                 <h4 class="text-sm md:text-lg font-bold text-white/90 uppercase tracking-wider font-heading flex items-center gap-2">
                    <span class="w-1.5 h-6 bg-primary rounded-full"></span>
                    {{ pack.name }}
                  </h4>
@@ -123,7 +123,7 @@
               </div>
 
               <!-- Pack Grid -->
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
                 <div v-for="(emoji, index) in pack.items" :key="index" class="group relative aspect-square bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
                   <div class="absolute inset-0 flex items-center justify-center p-2">
                      <img 

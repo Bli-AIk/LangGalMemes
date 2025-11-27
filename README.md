@@ -8,8 +8,8 @@
 
 **LangGalMemes** — A dark, cyberpunk-styled gallery website for programming language Moe-anthropomorphism (Gijinka) memes.
 
-| English | Simplified Chinese |
-| ------- | ------------------ |
+| English | Simplified Chinese        |
+|---------|---------------------------|
 | English | [简体中文](./README_zh-CN.md) |
 
 ## Introduction

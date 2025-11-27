@@ -8,9 +8,9 @@
 
 **LangGalMemes** — 一个暗黑赛博风格的静态网站，致力于展示和分享编程语言/引擎的娘化表情包。
 
-| English | Simplified Chinese |
-| ------- | ------------------ |
-| [English](./README.md) | 简体中文 |
+| English                | Simplified Chinese |
+|------------------------|--------------------|
+| [English](./README.md) | 简体中文               |
 
 ## 介绍
 
