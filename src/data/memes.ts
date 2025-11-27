@@ -120,8 +120,9 @@ export const memes: Meme[] = [
       }
     ],
     credits: {
-      source: 'AI Generated',
-      copyright: 'AI Gen: Nano Banana Pro / C# is a trademark of Microsoft.'
+      source: 'Design inspired by r/MoeMorphism',
+      url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/',
+      copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
     }
   }
 ];
