@@ -119,6 +119,17 @@
                        <span class="w-1 h-4 md:w-1.5 md:h-6 bg-primary rounded-full"></span>
                        {{ pack.name }}
                      </h4>
+                     
+                     <!-- Download Single Pack Button -->
+                     <button 
+                       @click="downloadPack(pack)"
+                       :disabled="isDownloading"
+                       class="ml-2 p-1.5 rounded-md bg-slate-800 hover:bg-primary text-slate-400 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                       title="Download this pack only"
+                     >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                     </button>
+
                      <div class="h-px bg-slate-800 flex-grow"></div>
                   </div>
                   <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
@@ -155,7 +166,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import type { Meme } from '../data/memes';
+import type { Meme, EmojiPack } from '../data/memes';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 
@@ -173,6 +184,57 @@ const totalCount = computed(() => {
   if (!props.meme.emojiPacks) return 0;
   return props.meme.emojiPacks.reduce((acc, pack) => acc + pack.items.length, 0);
 });
+
+const downloadPack = async (pack: EmojiPack) => {
+  if (isDownloading.value) return;
+
+  isDownloading.value = true;
+  downloadProgress.value = 0;
+
+  try {
+    const zip = new JSZip();
+    const modeSuffix = bgMode.value === 'white_bg' ? 'WhiteBG' : 'Transparent';
+    const safePackName = pack.name.replace(/[^a-z0-9]/gi, '_');
+    const folderName = `${props.meme.techName}_${safePackName}_${modeSuffix}`;
+    const rootFolder = zip.folder(folderName);
+
+    if (!rootFolder) throw new Error("Failed to create zip folder");
+
+    const totalItems = pack.items.length;
+    let processedCount = 0;
+
+    const promises = pack.items.map(async (item) => {
+      const url = item[bgMode.value];
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to fetch ${url}`);
+        const blob = await response.blob();
+
+        const cleanUrl = url.split('?')[0];
+        const filename = cleanUrl?.split('/').pop() || 'image.png';
+
+        rootFolder.file(filename, blob);
+      } catch (err) {
+        console.error(`Skipping file ${url}:`, err);
+      } finally {
+        processedCount++;
+        downloadProgress.value = Math.floor((processedCount / totalItems) * 100);
+      }
+    });
+
+    await Promise.all(promises);
+
+    const content = await zip.generateAsync({ type: "blob" });
+    saveAs(content, `${folderName}.zip`);
+
+  } catch (error) {
+    console.error("Pack download failed:", error);
+    alert("Failed to download pack. Please check console.");
+  } finally {
+    isDownloading.value = false;
+    downloadProgress.value = 0;
+  }
+};
 
 const downloadAllAssets = async () => {
   if (isDownloading.value) return;
