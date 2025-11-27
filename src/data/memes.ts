@@ -1,13 +1,18 @@
+export interface EmojiPack {
+  name: string;
+  items: string[];
+}
+
 export interface Meme {
   id: number;
-  name: string; // Character Name (e.g., Rust-tan)
-  techName: string; // Technology Name (e.g., Rust)
-  tags: string[]; // Categories for filtering
+  name: string;
+  techName: string;
+  tags: string[];
   tagline: string;
   description: string;
   imageUrl: string;
   color: string;
-  emojis?: string[]; // Optional list of emoji paths
+  emojiPacks: EmojiPack[]; // Changed from flat list to packs
 }
 
 // Helper to generate emoji paths
@@ -15,6 +20,16 @@ const getRustEmojis = () => {
   const emojis = [];
   for (let i = 1; i <= 29; i++) {
     emojis.push(`/characters/rust_tan/emojis/emoji_${i}.png?v=2`);
+  }
+  return emojis;
+};
+
+const getUnitySeries0 = () => {
+  const emojis = [];
+  // Based on file listing, assuming 1-24 based on commit log, but let's verify or use a safe range
+  // Commit log showed up to emoji_24.png
+  for (let i = 1; i <= 24; i++) {
+    emojis.push(`/characters/otori_kohaku/series_0/emoji_${i}.png`);
   }
   return emojis;
 };
@@ -28,8 +43,13 @@ export const memes: Meme[] = [
     tagline: 'Huh? Segfault again? Pathetic. ♡',
     description: `A smug, correcting brat who loves to point out your sloppy memory management. "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."`,
     imageUrl: '/characters/rust_tan/cover.png',
-    color: '#dea584', // Rust orange-ish
-    emojis: getRustEmojis()
+    color: '#dea584',
+    emojiPacks: [
+      {
+        name: 'Standard Pack',
+        items: getRustEmojis()
+      }
+    ]
   },
   {
     id: 2,
@@ -39,7 +59,13 @@ export const memes: Meme[] = [
     tagline: "Assets loaded! Let's build your dream world together! ☆",
     description: `The energetic poster girl of Unity Engine. She loves korokke and game dev! "C# scripting is super easy, I'll show you how!"`,
     imageUrl: '/characters/otori_kohaku/cover.png',
-    color: '#222c37', // Unity dark/grey
-    emojis: [] // No emojis yet
+    color: '#222c37',
+    emojiPacks: [
+      {
+        name: 'Series 0: Core',
+        items: getUnitySeries0()
+      }
+      // Future Series 1 will go here
+    ]
   }
 ];

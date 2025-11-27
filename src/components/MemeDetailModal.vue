@@ -42,6 +42,9 @@
             <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-700 text-slate-300 border border-slate-600">
               Character Info
             </span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600">
+              {{ meme.techName }}
+            </span>
           </div>
           <h2 class="text-4xl md:text-5xl font-heading font-black text-white mb-4 tracking-tight">
             {{ meme.name }}
@@ -52,50 +55,66 @@
           <div class="mt-8 flex flex-wrap gap-4">
             <button class="px-6 py-3 bg-primary hover:bg-fuchsia-600 text-white rounded-xl font-bold transition-all shadow-lg shadow-primary/25 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Pack
+              Download All Packs
             </button>
           </div>
         </div>
       </div>
 
       <!-- Content: Meme Grid -->
-      <!-- Removed padding from parent to allow sticky header to reach edges -->
       <div class="flex-1 overflow-y-auto bg-dark-bg custom-scrollbar">
         
-        <!-- Sticky Header with full width background and internal padding -->
-        <div class="sticky top-0 z-10 bg-dark-bg border-b border-slate-800/50 px-8 py-4 shadow-lg shadow-black/20">
+        <!-- Sticky Header -->
+        <div class="sticky top-0 z-10 bg-dark-bg border-b border-slate-800/50 px-8 py-4 shadow-lg shadow-black/20 flex justify-between items-center">
           <h3 class="text-2xl font-bold text-white flex items-center gap-2">
             <span class="text-secondary">📂</span> Sticker Gallery
-            <span class="text-sm font-normal text-slate-500 ml-2">({{ meme.emojis?.length || 0 }} items)</span>
           </h3>
+          <span class="text-sm font-medium text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">
+            {{ totalCount }} Items
+          </span>
         </div>
         
         <!-- Grid container with padding -->
-        <div class="p-8">
-          <div v-if="meme.emojis && meme.emojis.length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            <!-- Real Emojis -->
-            <div v-for="(emoji, index) in meme.emojis" :key="index" class="group relative aspect-square bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
-              <div class="absolute inset-0 flex items-center justify-center p-2">
-                 <img 
-                   :src="emoji" 
-                   loading="lazy"
-                   class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                 />
+        <div class="p-8 space-y-12">
+          
+          <template v-if="meme.emojiPacks && meme.emojiPacks.length > 0">
+            <div v-for="pack in meme.emojiPacks" :key="pack.name">
+              <!-- Pack Header -->
+              <div class="flex items-center gap-4 mb-6">
+                 <h4 class="text-lg font-bold text-white/90 uppercase tracking-wider font-heading flex items-center gap-2">
+                   <span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                   {{ pack.name }}
+                 </h4>
+                 <div class="h-px bg-slate-800 flex-grow"></div>
               </div>
-              <!-- Hover Actions -->
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                <a :href="emoji" download target="_blank" class="p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors" title="Download">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                </a>
+
+              <!-- Pack Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div v-for="(emoji, index) in pack.items" :key="index" class="group relative aspect-square bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
+                  <div class="absolute inset-0 flex items-center justify-center p-2">
+                     <img 
+                       :src="emoji" 
+                       loading="lazy"
+                       class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                     />
+                  </div>
+                  <!-- Hover Actions -->
+                  <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                    <a :href="emoji" download target="_blank" class="p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors" title="Download">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </template>
           
           <!-- Empty State -->
           <div v-else class="flex flex-col items-center justify-center py-20 text-slate-500">
              <span class="text-4xl mb-4">🚧</span>
              <p class="text-lg">No stickers available yet.</p>
           </div>
+
         </div>
       </div>
 
@@ -104,13 +123,19 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { Meme } from '../data/memes';
 
-defineProps<{
+const props = defineProps<{
   meme: Meme;
 }>();
 
 defineEmits(['close']);
+
+const totalCount = computed(() => {
+  if (!props.meme.emojiPacks) return 0;
+  return props.meme.emojiPacks.reduce((acc, pack) => acc + pack.items.length, 0);
+});
 </script>
 
 <style scoped>
