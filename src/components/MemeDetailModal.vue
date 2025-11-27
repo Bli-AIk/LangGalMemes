@@ -59,35 +59,43 @@
       </div>
 
       <!-- Content: Meme Grid -->
-      <div class="flex-1 overflow-y-auto bg-dark-bg p-8 custom-scrollbar">
-        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2 sticky top-0 bg-dark-bg/95 backdrop-blur-sm py-2 z-10">
-          <span class="text-secondary">📂</span> Sticker Gallery
-          <span class="text-sm font-normal text-slate-500 ml-2">({{ meme.emojis?.length || 0 }} items)</span>
-        </h3>
+      <!-- Removed padding from parent to allow sticky header to reach edges -->
+      <div class="flex-1 overflow-y-auto bg-dark-bg custom-scrollbar">
         
-        <div v-if="meme.emojis && meme.emojis.length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 pb-8">
-          <!-- Real Emojis -->
-          <div v-for="(emoji, index) in meme.emojis" :key="index" class="group relative aspect-square bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
-            <div class="absolute inset-0 flex items-center justify-center p-2">
-               <img 
-                 :src="emoji" 
-                 loading="lazy"
-                 class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-               />
-            </div>
-            <!-- Hover Actions -->
-            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-              <a :href="emoji" download target="_blank" class="p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors" title="Download">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
+        <!-- Sticky Header with full width background and internal padding -->
+        <div class="sticky top-0 z-10 bg-dark-bg border-b border-slate-800/50 px-8 py-4 shadow-lg shadow-black/20">
+          <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+            <span class="text-secondary">📂</span> Sticker Gallery
+            <span class="text-sm font-normal text-slate-500 ml-2">({{ meme.emojis?.length || 0 }} items)</span>
+          </h3>
         </div>
         
-        <!-- Empty State -->
-        <div v-else class="flex flex-col items-center justify-center py-20 text-slate-500">
-           <span class="text-4xl mb-4">🚧</span>
-           <p class="text-lg">No stickers available yet.</p>
+        <!-- Grid container with padding -->
+        <div class="p-8">
+          <div v-if="meme.emojis && meme.emojis.length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <!-- Real Emojis -->
+            <div v-for="(emoji, index) in meme.emojis" :key="index" class="group relative aspect-square bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
+              <div class="absolute inset-0 flex items-center justify-center p-2">
+                 <img 
+                   :src="emoji" 
+                   loading="lazy"
+                   class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                 />
+              </div>
+              <!-- Hover Actions -->
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                <a :href="emoji" download target="_blank" class="p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors" title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Empty State -->
+          <div v-else class="flex flex-col items-center justify-center py-20 text-slate-500">
+             <span class="text-4xl mb-4">🚧</span>
+             <p class="text-lg">No stickers available yet.</p>
+          </div>
         </div>
       </div>
 
