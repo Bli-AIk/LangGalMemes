@@ -2,8 +2,6 @@
 
 [![license](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)](LICENSE-MIT) <img src="https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D" /> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" />
 
-> 当前状态：🚧 早期开发中
-
 ![Preview](./preview.png)
 
 **LangGalMemes** — 一个致力于展示和分享 编程语言 / 引擎 的娘化表情包的静态网站。

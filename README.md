@@ -2,8 +2,6 @@
 
 [![license](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)](LICENSE-MIT) <img src="https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D" /> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" />
 
-> Status: 🚧 Early Development
-
 ![Preview](./preview.png)
 
 **LangGalMemes** — A gallery website for programming language Moe-anthropomorphism (Gijinka) memes.
