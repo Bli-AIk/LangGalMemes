@@ -27,7 +27,7 @@
     The energetic poster girl of Unity Engine. She loves korokke and game dev!
     "C# scripting is super easy, I'll show you how!"
   imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png'
-  color: '#222c37'
+  color: '#8cb5e3'
   emojiPacks:
     - name: 'Series 0: Core'
       path: '/LangGalMemes/characters/otori_kohaku/series_0'
@@ -51,7 +51,7 @@
     A quiet, elegant magical girl powered by the .NET ecosystem. She casts powerful syntactic sugar spells and loves structured environments.
     "Garbage collection is an art form, you know."
   imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png'
-  color: '#68217a'
+  color: '#b566c9'
   emojiPacks:
     - name: 'Series 0: Magick'
       path: '/LangGalMemes/characters/csharp_tan/series_0'
