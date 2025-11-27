@@ -1,0 +1,99 @@
+- id: 1
+  name: 'Rust-tan'
+  techName: 'Rust'
+  tags: ['Language', 'Systems']
+  tagline: 'Huh? Segfault again? Pathetic. ♡'
+  description: >
+    A smug, correcting brat who loves to point out your sloppy memory management.
+    "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."
+  imageUrl: '/LangGalMemes/characters/rust_tan/cover.png'
+  color: '#dea584'
+  emojiPacks:
+    - name: 'Standard Pack'
+      path: '/LangGalMemes/characters/rust_tan/emojis'
+      pattern: 'emoji_{i}.png?v=2'
+      range: [1, 29]
+  credits:
+    source: 'Design inspired by u/re_error (r/ProgrammerAnimemes)'
+    url: 'https://www.reddit.com/r/ProgrammerAnimemes/comments/1garqij/oc_rusttan_inktober_day_22/'
+    copyright: 'Character Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 2
+  name: 'Otori Kohaku'
+  techName: 'Unity'
+  tags: ['Engine', 'Game Dev']
+  tagline: "Assets loaded! Let's build your dream world together! ☆"
+  description: >
+    The energetic poster girl of Unity Engine. She loves korokke and game dev!
+    "C# scripting is super easy, I'll show you how!"
+  imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png'
+  color: '#222c37'
+  emojiPacks:
+    - name: 'Series 0: Core'
+      path: '/LangGalMemes/characters/otori_kohaku/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 1: Mental State'
+      path: '/LangGalMemes/characters/otori_kohaku/series_1'
+      pattern: 'emoji_{i}.png'
+      list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21, 22, 23, 24]
+  credits:
+    source: 'Unity Technologies Japan'
+    url: 'https://unity-chan.com/'
+    copyright: '© Unity Technologies Japan / Unity-chan is a trademark of Unity Technologies.'
+
+- id: 3
+  name: 'Sharu'
+  techName: 'C#'
+  tags: ['Language', 'Enterprise']
+  tagline: "Runtime Magic! Everything is an object... probably. ✨"
+  description: >
+    A quiet, elegant magical girl powered by the .NET ecosystem. She casts powerful syntactic sugar spells and loves structured environments.
+    "Garbage collection is an art form, you know."
+  imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png'
+  color: '#68217a'
+  emojiPacks:
+    - name: 'Series 0: Magick'
+      path: '/LangGalMemes/characters/csharp_tan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 4
+  name: 'Jameca'
+  techName: 'GameMaker'
+  tags: ['Engine', 'Game Dev']
+  tagline: "Drag, drop, done! Game dev is for everyone! 🎮"
+  description: "A high school girl curious about programming and game development. While she starts with visual scripting, she's quickly learning the power of GML. Always enthusiastic about indie games!"
+  imageUrl: '/LangGalMemes/characters/gamemaker_jameca/cover.png'
+  color: '#6AB155'
+  emojiPacks:
+    - name: 'Series 0: Student'
+      path: '/LangGalMemes/characters/gamemaker_jameca/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'
+
+- id: 5
+  name: 'Rika Pointer'
+  techName: 'C++'
+  tags: ['Language', 'Systems']
+  tagline: "Legacy code isn't just code, it's heritage. Respect it."
+  description: >
+    A strict, old-fashioned middle-aged woman experiencing a midlife crisis. She earnestly advises you...
+    "At least start from the 'basics', young one. You can't just rely on garbage collection forever!"
+  imageUrl: '/LangGalMemes/characters/rika_pointer/cover.png'
+  color: '#00599C'
+  emojiPacks:
+    - name: 'Series 0: Legacy'
+      path: '/LangGalMemes/characters/rika_pointer/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'

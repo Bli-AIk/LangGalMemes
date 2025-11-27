@@ -21,9 +21,21 @@
       </div>
     </div>
 
+    <!-- Loading State -->
+    <div v-if="loading" class="flex justify-center items-center py-32">
+      <div class="animate-spin rounded-full h-12 w-12 border-4 border-slate-700 border-t-primary"></div>
+    </div>
+
+    <!-- Error State -->
+    <div v-else-if="error" class="text-center py-20">
+      <p class="text-red-400 text-lg font-mono">{{ error }}</p>
+      <button @click="fetchMemes" class="mt-4 px-4 py-2 bg-slate-800 rounded text-white hover:bg-slate-700">Retry</button>
+    </div>
+
     <!-- Grid -->
     <!-- Added 'relative' to container for absolute positioning context -->
     <TransitionGroup 
+      v-else
       name="list" 
       tag="div" 
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 relative"
@@ -38,7 +50,7 @@
     </TransitionGroup>
 
     <!-- Empty State -->
-    <div v-if="filteredMemes.length === 0" class="text-center py-20">
+    <div v-if="!loading && !error && filteredMemes.length === 0" class="text-center py-20">
       <p class="text-slate-500 text-lg font-mono">No characters found in this category.</p>
     </div>
 
@@ -63,22 +75,42 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { memes, type Meme } from '../data/memes';
+import { ref, computed, onMounted } from 'vue';
+import { loadMemes, type Meme } from '../data/memes';
 import MemeCard from './MemeCard.vue';
 import MemeDetailModal from './MemeDetailModal.vue';
 
 const categories = ['All', 'Language', 'Engine', 'Editor', 'Runtime'];
 const activeTab = ref('All');
+const memes = ref<Meme[]>([]);
+const loading = ref(true);
+const error = ref<string | null>(null);
 
 const filteredMemes = computed(() => {
   if (activeTab.value === 'All') {
-    return memes;
+    return memes.value;
   }
-  return memes.filter(meme => meme.tags.includes(activeTab.value));
+  return memes.value.filter(meme => meme.tags.includes(activeTab.value));
 });
 
 const selectedMeme = ref<Meme | null>(null);
+
+const fetchMemes = async () => {
+  loading.value = true;
+  error.value = null;
+  try {
+    memes.value = await loadMemes();
+  } catch (err) {
+    error.value = 'Failed to load characters data.';
+    console.error(err);
+  } finally {
+    loading.value = false;
+  }
+};
+
+onMounted(() => {
+  fetchMemes();
+});
 
 const openModal = (meme: Meme) => {
   selectedMeme.value = meme;

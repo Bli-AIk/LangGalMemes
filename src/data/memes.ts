@@ -1,3 +1,5 @@
+import yaml from 'js-yaml';
+
 export interface EmojiPack {
   name: string;
   items: string[];
@@ -20,137 +22,64 @@ export interface Meme {
   };
 }
 
-// Helper to generate emoji paths
-const getRustEmojis = () => {
-  const emojis = [];
-  for (let i = 1; i <= 29; i++) {
-    emojis.push(`/LangGalMemes/characters/rust_tan/emojis/emoji_${i}.png?v=2`);
-  }
-  return emojis;
-};
+// Interfaces for the YAML structure (slightly different from runtime structure)
+interface YamlEmojiPack {
+  name: string;
+  path: string;
+  pattern: string;
+  range?: [number, number];
+  list?: number[];
+}
 
-const getUnitySeries0 = () => {
-  const emojis = [];
-  for (let i = 1; i <= 24; i++) {
-    emojis.push(`/LangGalMemes/characters/otori_kohaku/series_0/emoji_${i}.png`);
-  }
-  return emojis;
-};
+interface YamlMeme extends Omit<Meme, 'emojiPacks'> {
+  emojiPacks: YamlEmojiPack[];
+}
 
-const getUnitySeries1 = () => {
-  const emojis = [];
-  const indices = [
-    ...Array.from({ length: 15 }, (_, i) => i + 1),
-    21, 22, 23, 24
-  ];
-  for (const i of indices) {
-    emojis.push(`/LangGalMemes/characters/otori_kohaku/series_1/emoji_${i}.png`);
-  }
-  return emojis;
-};
-
-const getCSharpSeries0 = () => {
-  const emojis = [];
-  for (let i = 1; i <= 24; i++) {
-    emojis.push(`/LangGalMemes/characters/csharp_tan/series_0/emoji_${i}.png`);
-  }
-  return emojis;
-};
-
-const getGamemakerSeries0 = () => {
-  const emojis = [];
-  for (let i = 1; i <= 24; i++) {
-    emojis.push(`/LangGalMemes/characters/gamemaker_jameca/series_0/emoji_${i}.png`);
-  }
-  return emojis;
-};
-
-export const memes: Meme[] = [
-  {
-    id: 1,
-    name: 'Rust-tan',
-    techName: 'Rust',
-    tags: ['Language', 'Systems'],
-    tagline: 'Huh? Segfault again? Pathetic. ♡',
-    description: `A smug, correcting brat who loves to point out your sloppy memory management. "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."`,
-    imageUrl: '/LangGalMemes/characters/rust_tan/cover.png',
-    color: '#dea584',
-    emojiPacks: [
-      {
-        name: 'Standard Pack',
-        items: getRustEmojis()
-      }
-    ],
-    credits: {
-      source: 'Design inspired by u/re_error (r/ProgrammerAnimemes)',
-      url: 'https://www.reddit.com/r/ProgrammerAnimemes/comments/1garqij/oc_rusttan_inktober_day_22/',
-      copyright: 'Character Concept: Community / AI Gen: Nano Banana Pro'
+export const loadMemes = async (): Promise<Meme[]> => {
+  try {
+    // Adjust the path if your base URL is different
+    const response = await fetch('/LangGalMemes/characters/characters.yaml');
+    if (!response.ok) {
+      throw new Error(`Failed to load config: ${response.statusText}`);
     }
-  },
-  {
-    id: 2,
-    name: 'Otori Kohaku',
-    techName: 'Unity',
-    tags: ['Engine', 'Game Dev'],
-    tagline: "Assets loaded! Let's build your dream world together! ☆",
-    description: `The energetic poster girl of Unity Engine. She loves korokke and game dev! "C# scripting is super easy, I'll show you how!"`,
-    imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png',
-    color: '#222c37',
-    emojiPacks: [
-      {
-        name: 'Series 0: Core',
-        items: getUnitySeries0()
-      },
-      {
-        name: 'Series 1: Mental State',
-        items: getUnitySeries1()
-      }
-    ],
-    credits: {
-      source: 'Unity Technologies Japan',
-      url: 'https://unity-chan.com/',
-      copyright: '© Unity Technologies Japan / Unity-chan is a trademark of Unity Technologies.'
-    }
-  },
-  {
-    id: 3,
-    name: 'Sharu',
-    techName: 'C#',
-    tags: ['Language', 'Enterprise'],
-    tagline: "Runtime Magic! Everything is an object... probably. ✨",
-    description: `A quiet, elegant magical girl powered by the .NET ecosystem. She casts powerful syntactic sugar spells and loves structured environments. "Garbage collection is an art form, you know."`,
-    imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png',
-    color: '#68217a', // C# Purple
-    emojiPacks: [
-      {
-        name: 'Series 0: Magick',
-        items: getCSharpSeries0()
-      }
-    ],
-    credits: {
-      source: 'Design inspired by r/MoeMorphism',
-      url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/',
-      copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
-    }
-  },
-  {
-    id: 4,
-    name: 'Jameca',
-    techName: 'GameMaker',
-    tags: ['Engine', 'Game Dev'],
-    tagline: "Drag, drop, done! Game dev is for everyone! 🎮",
-    description: "A high school girl curious about programming and game development. While she starts with visual scripting, she's quickly learning the power of GML. Always enthusiastic about indie games!",
-    imageUrl: '/LangGalMemes/characters/gamemaker_jameca/cover.png',
-    color: '#6AB155',
-    emojiPacks: [
-      {
-        name: 'Series 0: Student',
-        items: getGamemakerSeries0()
-      }
-    ],
-    credits: {
-      source: 'Original Character',
-      copyright: 'AI Gen: Nano Banana Pro'
-    }
+    const yamlText = await response.text();
+    const rawData = yaml.load(yamlText) as YamlMeme[];
+
+    return rawData.map(transformMeme);
+  } catch (error) {
+    console.error('Error loading memes:', error);
+    return [];
   }
-];
+};
+
+const transformMeme = (yamlMeme: YamlMeme): Meme => {
+  const emojiPacks: EmojiPack[] = yamlMeme.emojiPacks.map(pack => {
+    const items: string[] = [];
+    
+    if (pack.range) {
+      const [start, end] = pack.range;
+      for (let i = start; i <= end; i++) {
+        items.push(`${pack.path}/${pack.pattern.replace('{i}', i.toString())}`);
+      }
+    } else if (pack.list) {
+      for (const i of pack.list) {
+        items.push(`${pack.path}/${pack.pattern.replace('{i}', i.toString())}`);
+      }
+    }
+
+    return {
+      name: pack.name,
+      items
+    };
+  });
+
+  return {
+    ...yamlMeme,
+    emojiPacks
+  };
+};
+
+// Keep an empty initial array for type safety if imported directly, 
+// though components should switch to using loadMemes()
+export const memes: Meme[] = [];
+
