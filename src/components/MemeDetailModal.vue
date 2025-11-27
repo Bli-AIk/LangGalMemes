@@ -209,7 +209,7 @@ const downloadAllAssets = async () => {
           // Extract filename from URL (e.g., emoji_1.png)
           // Remove query params if any
           const cleanUrl = url.split('?')[0];
-          const filename = cleanUrl.split('/').pop() || 'image.png';
+          const filename = cleanUrl?.split('/').pop() || 'image.png';
           
           packFolder.file(filename, blob);
         } catch (err) {
