@@ -12,7 +12,6 @@ export interface Meme {
 const getRustEmojis = () => {
   const emojis = [];
   for (let i = 1; i <= 29; i++) {
-    // Adding a query param to force cache busting for potentially stuck images
     emojis.push(`/characters/rust_tan/emojis/emoji_${i}.png?v=2`);
   }
   return emojis;
@@ -21,18 +20,18 @@ const getRustEmojis = () => {
 export const memes: Meme[] = [
   {
     id: 1,
-    name: 'Rust-chan',
+    name: 'Rust-tan',
     tagline: 'Huh? Segfault again? Pathetic. ♡',
-    description: 'A smug, correcting brat who loves to point out your sloppy memory management. "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."',
+    description: `A smug, correcting brat who loves to point out your sloppy memory management. "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."`,
     imageUrl: '/characters/rust_tan/cover.png',
     color: '#dea584', // Rust orange-ish
     emojis: getRustEmojis()
   },
   {
     id: 2,
-    name: 'Unity-chan',
-    tagline: 'Otori Kohaku',
-    description: 'The energetic poster girl of Unity Engine. Ready to bring your games to life with high-performance rendering and C# scripts!',
+    name: 'Otori Kohaku',
+    tagline: "Assets loaded! Let's build your dream world together! ☆",
+    description: `The energetic poster girl of Unity Engine. She loves korokke and game dev! "C# scripting is super easy, I'll show you how!"`,
     imageUrl: '/characters/otori_kohaku/cover.png',
     color: '#222c37', // Unity dark/grey
     emojis: [] // No emojis yet
