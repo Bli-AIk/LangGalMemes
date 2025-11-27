@@ -1,8 +1,13 @@
 import yaml from 'js-yaml';
 
+export interface EmojiItem {
+  transparent: string;
+  white_bg: string;
+}
+
 export interface EmojiPack {
   name: string;
-  items: string[];
+  items: EmojiItem[];
 }
 
 export interface Meme {
@@ -54,16 +59,22 @@ export const loadMemes = async (): Promise<Meme[]> => {
 
 const transformMeme = (yamlMeme: YamlMeme): Meme => {
   const emojiPacks: EmojiPack[] = yamlMeme.emojiPacks.map(pack => {
-    const items: string[] = [];
+    const items: EmojiItem[] = [];
     
     if (pack.range) {
       const [start, end] = pack.range;
       for (let i = start; i <= end; i++) {
-        items.push(`${pack.path}/${pack.pattern.replace('{i}', i.toString())}`);
+        items.push({
+          transparent: `${pack.path}/transparent/${pack.pattern.replace('{i}', i.toString())}`,
+          white_bg: `${pack.path}/white_bg/${pack.pattern.replace('{i}', i.toString())}`
+        });
       }
     } else if (pack.list) {
       for (const i of pack.list) {
-        items.push(`${pack.path}/${pack.pattern.replace('{i}', i.toString())}`);
+        items.push({
+          transparent: `${pack.path}/transparent/${pack.pattern.replace('{i}', i.toString())}`,
+          white_bg: `${pack.path}/white_bg/${pack.pattern.replace('{i}', i.toString())}`
+        });
       }
     }
 

@@ -88,7 +88,7 @@
     A strict, old-fashioned middle-aged woman experiencing a midlife crisis. She earnestly advises you...
     "At least start from the 'basics', young one. You can't just rely on garbage collection forever!"
   imageUrl: '/LangGalMemes/characters/rika_pointer/cover.png'
-  color: '#00599C'
+  color: '#4a7a9e'
   emojiPacks:
     - name: 'Series 0: Legacy'
       path: '/LangGalMemes/characters/rika_pointer/series_0'

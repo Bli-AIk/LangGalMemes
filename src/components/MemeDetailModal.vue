@@ -81,10 +81,30 @@
         <!-- Scrollable Gallery Grid -->
         <div class="flex-1 overflow-y-auto bg-dark-bg custom-scrollbar relative">
              <!-- Sticky Header Inside Grid Area -->
-            <div class="sticky top-0 z-10 bg-dark-bg/95 backdrop-blur border-b border-slate-800/50 px-4 py-2 md:px-8 md:py-4 shadow-lg flex justify-between items-center">
-              <h3 class="text-sm md:text-2xl font-bold text-white flex items-center gap-2">
-                <span class="text-secondary">📂</span> <span class="hidden md:inline">Sticker Gallery</span><span class="md:hidden">Gallery</span>
-              </h3>
+            <div class="sticky top-0 z-10 bg-dark-bg/95 backdrop-blur border-b border-slate-800/50 px-4 py-2 md:px-8 md:py-4 shadow-lg flex flex-wrap justify-between items-center gap-2">
+              <div class="flex items-center gap-4">
+                <h3 class="text-sm md:text-2xl font-bold text-white flex items-center gap-2">
+                  <span class="text-secondary">📂</span> <span class="hidden md:inline">Sticker Gallery</span><span class="md:hidden">Gallery</span>
+                </h3>
+                <!-- Background Toggle -->
+                <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-1 border border-slate-700">
+                  <button 
+                    @click="bgMode = 'transparent'"
+                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                    :class="bgMode === 'transparent' ? 'bg-slate-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'"
+                  >
+                    Transparent
+                  </button>
+                  <button 
+                    @click="bgMode = 'white_bg'"
+                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                    :class="bgMode === 'white_bg' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-200'"
+                  >
+                    White BG
+                  </button>
+                </div>
+              </div>
+              
               <span class="text-[10px] md:text-sm font-medium text-slate-400 bg-slate-800 px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-slate-700">
                 {{ totalCount }}
               </span>
@@ -103,11 +123,18 @@
                   </div>
                   <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
                     <div v-for="(emoji, index) in pack.items" :key="index" class="group relative aspect-square bg-slate-800 rounded-lg md:rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
+                      <!-- Checkerboard background for transparent preview -->
+                      <div 
+                        class="absolute inset-0 opacity-20 pointer-events-none"
+                        v-if="bgMode === 'transparent'"
+                        style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 10px 10px;"
+                      ></div>
+                      
                       <div class="absolute inset-0 flex items-center justify-center p-1 md:p-2">
-                         <img :src="emoji" loading="lazy" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"/>
+                         <img :src="emoji[bgMode]" loading="lazy" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"/>
                       </div>
                       <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                         <a :href="emoji" download target="_blank" class="p-1.5 md:p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-4 md:h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                         <a :href="emoji[bgMode]" download target="_blank" class="p-1.5 md:p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-4 md:h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
                       </div>
                     </div>
                   </div>
@@ -140,6 +167,7 @@ defineEmits(['close']);
 
 const isDownloading = ref(false);
 const downloadProgress = ref(0);
+const bgMode = ref<'transparent' | 'white_bg'>('transparent');
 
 const totalCount = computed(() => {
   if (!props.meme.emojiPacks) return 0;
@@ -154,7 +182,8 @@ const downloadAllAssets = async () => {
   
   try {
     const zip = new JSZip();
-    const rootFolder = zip.folder(`${props.meme.techName}_Stickers`);
+    const modeSuffix = bgMode.value === 'white_bg' ? 'WhiteBG' : 'Transparent';
+    const rootFolder = zip.folder(`${props.meme.techName}_Stickers_${modeSuffix}`);
     
     if (!rootFolder) throw new Error("Failed to create zip folder");
 
@@ -170,7 +199,8 @@ const downloadAllAssets = async () => {
 
       // Download images sequentially to avoid network bottlenecks, or parallel for speed
       // Let's do parallel batches to be nice but fast
-      const promises = pack.items.map(async (url) => {
+      const promises = pack.items.map(async (item) => {
+        const url = item[bgMode.value];
         try {
           const response = await fetch(url);
           if (!response.ok) throw new Error(`Failed to fetch ${url}`);
@@ -195,7 +225,7 @@ const downloadAllAssets = async () => {
 
     // Generate zip file
     const content = await zip.generateAsync({ type: "blob" });
-    saveAs(content, `${props.meme.techName}_Sticker_Collection.zip`);
+    saveAs(content, `${props.meme.techName}_Sticker_Collection_${modeSuffix}.zip`);
 
   } catch (error) {
     console.error("Download failed:", error);
