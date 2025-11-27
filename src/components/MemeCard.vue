@@ -10,7 +10,7 @@
       :style="cardStyle"
     >
       <!-- Image/Visual Container -->
-      <div class="aspect-[4/5] overflow-hidden relative bg-slate-900/50 p-8 flex items-center justify-center border-b border-white/5">
+      <div class="aspect-[4/5] overflow-hidden relative bg-slate-900/50 px-4 pt-8 pb-0 flex items-end justify-center border-b border-white/5">
         
         <!-- Ambient Glow based on meme color -->
         <div 
@@ -22,7 +22,7 @@
           <img 
             :src="meme.imageUrl" 
             :alt="meme.name" 
-            class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-2xl relative z-10"
+            class="w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl relative z-10 origin-bottom"
             style="filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));"
           />
         </template>
