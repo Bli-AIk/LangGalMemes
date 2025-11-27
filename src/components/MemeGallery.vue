@@ -1,14 +1,14 @@
 <template>
   <section id="gallery" class="py-16 px-4 max-w-7xl mx-auto">
     <div class="flex items-center justify-between mb-10">
-      <h2 class="text-3xl md:text-4xl font-cartoon text-white">
+      <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">
         <span class="text-accent">#</span> Collection
       </h2>
-      <!-- Placeholder for potential filter buttons -->
-      <div class="hidden md:flex gap-2">
-        <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-gray-400 border border-slate-700">All</span>
-        <span class="px-3 py-1 bg-transparent rounded-full text-xs text-gray-500 border border-transparent hover:border-slate-700 hover:text-gray-400 transition-colors cursor-pointer">Static</span>
-        <span class="px-3 py-1 bg-transparent rounded-full text-xs text-gray-500 border border-transparent hover:border-slate-700 hover:text-gray-400 transition-colors cursor-pointer">Dynamic</span>
+      <!-- Filter Tabs -->
+      <div class="hidden md:flex gap-2 bg-slate-900/50 p-1 rounded-full border border-slate-800">
+        <button class="px-4 py-1.5 bg-slate-700 rounded-full text-sm text-white shadow-sm font-medium transition-all">All</button>
+        <button class="px-4 py-1.5 bg-transparent text-slate-400 hover:text-white text-sm font-medium transition-all">Editors</button>
+        <button class="px-4 py-1.5 bg-transparent text-slate-400 hover:text-white text-sm font-medium transition-all">Runtimes</button>
       </div>
     </div>
 
@@ -17,12 +17,45 @@
         v-for="meme in memes" 
         :key="meme.id" 
         :meme="meme" 
+        @open="openModal"
       />
     </div>
+
+    <!-- Detail Modal -->
+    <Teleport to="body">
+      <Transition 
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <MemeDetailModal 
+          v-if="selectedMeme" 
+          :meme="selectedMeme" 
+          @close="closeModal" 
+        />
+      </Transition>
+    </Teleport>
   </section>
 </template>
 
 <script setup lang="ts">
-import { memes } from '../data/memes';
+import { ref } from 'vue';
+import { memes, type Meme } from '../data/memes';
 import MemeCard from './MemeCard.vue';
+import MemeDetailModal from './MemeDetailModal.vue';
+
+const selectedMeme = ref<Meme | null>(null);
+
+const openModal = (meme: Meme) => {
+  selectedMeme.value = meme;
+  document.body.style.overflow = 'hidden'; // Lock scroll
+};
+
+const closeModal = () => {
+  selectedMeme.value = null;
+  document.body.style.overflow = ''; // Unlock scroll
+};
 </script>

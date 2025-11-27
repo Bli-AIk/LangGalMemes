@@ -10,66 +10,66 @@ export interface Meme {
 export const memes: Meme[] = [
   {
     id: 1,
-    name: 'Rust-chan',
-    tagline: 'Memory Safety First!',
-    description: 'Always checking your borrow checker. Strict but caring.',
-    imageUrl: 'https://placehold.co/400x500/dea584/1e293b?text=Rust-chan&font=roboto',
-    color: '#dea584'
+    name: 'Bun-chan',
+    tagline: 'Fast as Lightning!',
+    description: 'The speedy all-in-one runtime. She bakes dependencies in milliseconds.',
+    imageUrl: '/logos/Bun/BunLogoShadowed.png',
+    color: '#fbf0df' // Creamy bun color
   },
   {
     id: 2,
-    name: 'Python-neesan',
-    tagline: 'Import Gravity',
-    description: 'Elegant, readable, and loves snakes. Maybe too dynamic?',
-    imageUrl: 'https://placehold.co/400x500/3776ab/ffe873?text=Python-neesan&font=roboto',
-    color: '#3776ab'
+    name: 'Neovim-sensei',
+    tagline: 'Hyperextensible Vim',
+    description: 'Efficient, modal, and modernized. Once you meet her, you can never quit (literally).',
+    imageUrl: '/logos/Neovim/NeovimShadowed.png',
+    color: '#57a143' // Green
   },
   {
     id: 3,
-    name: 'JS-imouto',
-    tagline: 'I run everywhere!',
-    description: 'Energetic and chaotic. Sometimes undefined, but always there.',
-    imageUrl: 'https://placehold.co/400x500/f7df1e/000000?text=JS-imouto&font=roboto',
-    color: '#f7df1e'
+    name: 'Docker-whale',
+    tagline: 'Build, Ship, Run',
+    description: 'Carries your entire world on her back. Loves containers and isolation.',
+    imageUrl: '/logos/Docker/DockerLogoShadowed.png',
+    color: '#2496ed' // Docker Blue
   },
   {
     id: 4,
-    name: 'C++-sensei',
-    tagline: 'With great power...', 
-    description: 'Complex, powerful, and historically rich. Don\'t make her angry (segfault).',
-    imageUrl: 'https://placehold.co/400x500/00599c/ffffff?text=C%2B%2B-sensei&font=roboto',
-    color: '#00599c'
+    name: 'Godot-robo',
+    tagline: 'Waiting for 4.0...', 
+    description: 'Open source game engine royalty. Lightweight but surprisingly powerful.',
+    imageUrl: '/logos/GodotEngine/GodotLogoShadowed.png',
+    color: '#478cbf' // Godot Blue
   },
   {
     id: 5,
-    name: 'Go-gopher',
-    tagline: 'Simple & Fast',
-    description: 'Google\'s favorite. Loves simplicity and concurrency.',
-    imageUrl: 'https://placehold.co/400x500/00add8/000000?text=Go-gopher&font=roboto',
-    color: '#00add8'
+    name: 'VSCode-maid',
+    tagline: 'Editor for Everyone',
+    description: 'Versatile and customizable. Has an extension for absolutely everything you need.',
+    imageUrl: '/logos/VSCode/VSCodeLogoShadowed.png',
+    color: '#007acc' // VSCode Blue
   },
   {
     id: 6,
-    name: 'TypeScript-sama',
-    tagline: 'Strictly Typed',
-    description: 'JS-imouto\'s disciplined older sister. Brings order to chaos.',
-    imageUrl: 'https://placehold.co/400x500/3178c6/ffffff?text=TS-sama&font=roboto',
-    color: '#3178c6'
+    name: 'Kubernetes-hime',
+    tagline: 'Orchestration Queen',
+    description: 'Controls the fleet. Complex to understand, but impossible to scale without.',
+    imageUrl: '/logos/Kubernetes/KubernetesLogoShadowed.png',
+    color: '#326ce5' // K8s Blue
   },
   {
     id: 7,
-    name: 'Java-obasan',
-    tagline: 'Write Once, Run Anywhere',
-    description: 'Corporate, reliable, and loves coffee. A bit verbose.',
-    imageUrl: 'https://placehold.co/400x500/b07219/ffffff?text=Java-obasan&font=roboto',
-    color: '#b07219'
+    name: 'Elysia-angel',
+    tagline: 'Ergonomic Framework',
+    description: 'Fast, type-safe, and heavenly. Bun-chan\'s best friend.',
+    imageUrl: '/logos/ElysiaJS/ElysiaLogoShadowed.png',
+    color: '#ff3e83' // Pinkish
   },
   {
     id: 8,
-    name: 'Swift-idol',
-    tagline: 'Fast & Modern',
-    description: 'Apple\'s star. Trendy, safe, and fast.',
-    imageUrl: 'https://placehold.co/400x500/f05138/ffffff?text=Swift-idol&font=roboto',
-    color: '#f05138'
+    name: 'ImHex-witch',
+    tagline: 'Hex Editor Extraordinaire',
+    description: 'Sees the matrix directly. For when you need to reverse engineer reality.',
+    imageUrl: '/logos/ImHex/ImHexLogoShadowed.png',
+    color: '#626467' // Grey
   }
 ];

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +6,19 @@
 
 body {
   @apply bg-dark-bg text-white font-sans overflow-x-hidden;
+  background-image: 
+    radial-gradient(circle at center, #1e293b 0%, transparent 1%),
+    radial-gradient(circle at center, #1e293b 0%, transparent 1%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-attachment: fixed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-cartoon;
+  @apply font-heading;
 }

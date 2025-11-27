@@ -14,8 +14,8 @@ export default {
         'accent': '#22d3ee', // Cyan 400
       },
       fontFamily: {
-        'cartoon': ['"Fredoka One"', 'cursive', 'sans-serif'], // We will load this font
-        'sans': ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        'heading': ['"Outfit"', 'sans-serif'],
+        'sans': ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float': 'float 3s ease-in-out infinite',
