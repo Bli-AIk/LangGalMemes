@@ -52,11 +52,26 @@
           <p class="text-lg font-medium mb-4" :style="{ color: meme.color }">{{ meme.tagline }}</p>
           <p class="text-slate-400 leading-relaxed max-w-xl">{{ meme.description }}</p>
           
-          <div class="mt-8 flex flex-wrap gap-4">
+          <div class="mt-8 flex flex-wrap gap-4 items-center">
             <button class="px-6 py-3 bg-primary hover:bg-fuchsia-600 text-white rounded-xl font-bold transition-all shadow-lg shadow-primary/25 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download All Packs
             </button>
+          </div>
+
+          <!-- Credits Section -->
+          <div class="mt-6 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col gap-1">
+            <div class="flex items-center gap-2">
+              <span class="font-bold uppercase tracking-wider text-slate-400">Source:</span>
+              <a v-if="meme.credits.url" :href="meme.credits.url" target="_blank" class="hover:text-primary transition-colors border-b border-transparent hover:border-primary truncate max-w-xs">
+                {{ meme.credits.source }} ↗
+              </a>
+              <span v-else>{{ meme.credits.source }}</span>
+            </div>
+            <div v-if="meme.credits.copyright" class="flex items-center gap-2">
+              <span class="font-bold uppercase tracking-wider text-slate-400">License:</span>
+              <span>{{ meme.credits.copyright }}</span>
+            </div>
           </div>
         </div>
       </div>

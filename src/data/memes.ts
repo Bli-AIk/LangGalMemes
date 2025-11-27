@@ -12,7 +12,12 @@ export interface Meme {
   description: string;
   imageUrl: string;
   color: string;
-  emojiPacks: EmojiPack[]; // Changed from flat list to packs
+  emojiPacks: EmojiPack[];
+  credits: {
+    source: string;
+    url?: string;
+    copyright?: string;
+  };
 }
 
 // Helper to generate emoji paths
@@ -61,7 +66,12 @@ export const memes: Meme[] = [
         name: 'Standard Pack',
         items: getRustEmojis()
       }
-    ]
+    ],
+    credits: {
+      source: 'Design inspired by u/re_error (r/ProgrammerAnimemes)',
+      url: 'https://www.reddit.com/r/ProgrammerAnimemes/comments/1garqij/oc_rusttan_inktober_day_22/',
+      copyright: 'Character Concept: Community / AI Gen: Nano Banana Pro'
+    }
   },
   {
     id: 2,
@@ -78,9 +88,14 @@ export const memes: Meme[] = [
         items: getUnitySeries0()
       },
       {
-        name: 'Series 1: Mental State', // The "beautiful" mental state
+        name: 'Series 1: Mental State',
         items: getUnitySeries1()
       }
-    ]
+    ],
+    credits: {
+      source: 'Unity Technologies Japan',
+      url: 'https://unity-chan.com/',
+      copyright: '© Unity Technologies Japan / Unity-chan is a trademark of Unity Technologies.'
+    }
   }
 ];

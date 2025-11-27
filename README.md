@@ -1,42 +1,67 @@
-# lang-gal-memes
+# LangGalMemes 🎔
 
-This template should help get you started developing with Vue 3 in Vite.
+[![license](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)](LICENSE-MIT) <img src="https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D" /> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" />
 
-## Recommended IDE Setup
+> Status: 🚧 Early Development
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![Preview](./preview.png)
 
-## Recommended Browser Setup
+**LangGalMemes** — A dark, cyberpunk-styled gallery website for programming language Moe-anthropomorphism (Gijinka) memes.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+| English | Simplified Chinese |
+| ------- | ------------------ |
+| English | [简体中文](./README_zh-CN.md) |
 
-## Type Support for `.vue` Imports in TS
+## Introduction
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+**LangGalMemes** is a modern gallery built with Vue 3 and Tailwind CSS. It hosts a collection of AI-generated (Nano Banana Pro) sticker packs featuring personified tech characters.
 
-## Customize configuration
+It solves the problem of finding high-quality, consistent "Tech-tan" memes by providing a centralized, searchable, and beautiful interface. Users can easily browse, preview, and download sticker packs for their favorite languages like **Rust-tan** and **Unity-chan**.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Features
 
-## Project Setup
+*   **Holographic 3D Cards**: Character cards with parallax tilt and holographic shine.
+*   **Immersive UI**: Dynamic grid background with a dark/cyber aesthetic.
+*   **Smart Filters**: Filter characters by Language, Engine, Runtime, etc.
+*   **Series Support**: View and download multiple sticker packs (e.g., Unity Core vs. Mental State) in a sleek modal.
+*   **Mobile Responsive**: Fully optimized for all devices.
 
-```sh
-pnpm install
-```
+## Usage
 
-### Compile and Hot-Reload for Development
+1.  **Install Dependencies**:
 
-```sh
-pnpm dev
-```
+    ```bash
+    pnpm install
+    ```
 
-### Type-Check, Compile and Minify for Production
+2.  **Run Development Server**:
 
-```sh
-pnpm build
-```
+    ```bash
+    pnpm dev
+    ```
+
+3.  **Build for Production**:
+
+    ```bash
+    pnpm build
+    ```
+
+## License
+
+This project is distributed under either of the following licenses:
+
+*   Apache License 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+*   MIT License ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+
+Choose whichever suits you best.
+
+## Credits & Assets
+
+All image assets are **CC0 (Public Domain)**, but please respect the original character copyrights.
+
+*   **AI Generation**: Most assets generated via **Nano Banana Pro**.
+*   **Otori Kohaku (Unity-chan)**: Based on characters from **Unity Technologies Japan**. *Unity-chan is a trademark of Unity Technologies.*
+*   **Rust-tan**: Inspired by r/ProgrammerAnimemes user [OC Rust-tan Inktober](https://www.reddit.com/r/ProgrammerAnimemes/comments/1garqij/oc_rusttan_inktober_day_22/).
+*   **Concept**: Inspired by r/MoeMorphism.
+
+> **NOTE**: If any content infringes your copyright, please contact us for immediate removal.
