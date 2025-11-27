@@ -1,7 +1,10 @@
 <template>
-  <div class="min-h-screen bg-dark-bg flex flex-col">
+  <div class="min-h-screen flex flex-col relative">
+    <!-- Global Effects -->
+    <div class="bg-grid-animate"></div>
+
     <!-- Navigation -->
-    <nav class="py-6 px-4 border-b border-slate-800 bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50">
+    <nav class="py-6 px-4 border-b border-white/5 bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="text-2xl font-black text-white tracking-wider cursor-pointer select-none font-heading" @click="scrollToTop">
           Lang<span class="text-primary">Gal</span> <span class="text-pink-500">🎔</span>
@@ -13,7 +16,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main class="flex-grow relative z-10">
       <HeroSection />
       <MemeGallery />
     </main>
