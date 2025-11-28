@@ -66,7 +66,20 @@
             {{ meme.name }}
           </h2>
           <p class="text-xs md:text-lg font-medium mb-2 opacity-90 truncate" :style="{ color: meme.color }">{{ meme.tagline }}</p>
-          <p class="text-slate-400 text-xs md:text-base leading-relaxed line-clamp-3 md:line-clamp-none">{{ meme.description }}</p>
+          <div class="relative group cursor-pointer md:cursor-auto" @click="toggleDescription">
+            <p 
+              class="text-slate-400 text-xs md:text-base leading-relaxed transition-all duration-200" 
+              :class="isDescriptionExpanded ? 'line-clamp-none' : 'line-clamp-3 md:line-clamp-none'"
+            >
+              {{ meme.description }}
+            </p>
+            <!-- Mobile Expand Hint -->
+            <div v-if="!isDescriptionExpanded" class="md:hidden flex justify-start mt-1 opacity-60">
+               <span class="text-[10px] bg-slate-800 px-1.5 rounded text-primary flex items-center gap-1">
+                 Expand <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+               </span>
+            </div>
+          </div>
           
           <div class="mt-3 md:mt-6 flex flex-wrap gap-3 items-center">
             <button 
@@ -99,23 +112,23 @@
             <div class="sticky top-0 z-10 bg-dark-bg/95 backdrop-blur border-b border-slate-800/50 px-4 py-2 md:px-8 md:py-4 shadow-lg flex flex-col md:flex-row justify-between md:items-center gap-2">
               
               <!-- Top Row: Title & View Mode -->
-              <div class="flex items-center justify-between w-full md:w-auto md:justify-start md:gap-4">
+              <div class="flex flex-col items-start gap-2 w-full md:w-auto md:flex-row md:items-center md:justify-start md:gap-4">
                 <h3 class="text-sm md:text-2xl font-bold text-white flex items-center gap-2">
                   <span class="text-secondary">📂</span> <span class="hidden md:inline">Sticker Gallery</span><span class="md:hidden">Gallery</span>
                 </h3>
                 
                 <!-- Background Toggle -->
-                <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-1 border border-slate-700">
+                <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-0.5 md:p-1 border border-slate-700">
                   <button 
                     @click="bgMode = 'transparent'"
-                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                    class="px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
                     :class="bgMode === 'transparent' ? 'bg-slate-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'"
                   >
                     Transparent
                   </button>
                   <button 
                     @click="bgMode = 'white_bg'"
-                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                    class="px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
                     :class="bgMode === 'white_bg' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-200'"
                   >
                     White BG
@@ -234,6 +247,11 @@ const downloadProgress = ref(0);
 const bgMode = ref<'transparent' | 'white_bg'>('transparent');
 const strokeWidth = ref(0.2);
 const strokeColor = ref('#ffffff');
+const isDescriptionExpanded = ref(false);
+
+const toggleDescription = () => {
+  isDescriptionExpanded.value = !isDescriptionExpanded.value;
+};
 
 const totalCount = computed(() => {
   if (!props.meme.emojiPacks) return 0;
