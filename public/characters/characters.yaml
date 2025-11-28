@@ -178,3 +178,22 @@
     source: 'Mamansoft / Minerva'
     url: 'https://minerva.mamansoft.net/Notes/Neovim%E3%81%A1%E3%82%83%E3%82%93'
     copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
+
+- id: 10
+  name: 'Levi-chan'
+  techName: 'Linux Kernel'
+  tags: ['OS', 'Kernel', 'Linux']
+  tagline: "Ready to dive into the source? Let's compile a brighter future together! 🐧✨"
+  description: >
+    This energetic (probably) girl is stylish, full of life, and ready to take you on an adventure into the paradise of free and open-source software! She is the heart of the system, managing resources with a smile and ensuring freedom for all processes.
+  imageUrl: '/LangGalMemes/characters/levi_chan/cover.png'
+  color: '#EBCB8B'
+  emojiPacks:
+    - name: 'Series 0: Mainline'
+      path: '/LangGalMemes/characters/levi_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design by Ravimo'
+    url: 'https://x.com/_ravimo'
+    copyright: 'Character Design: Ravimo (CC-BY 4.0) / AI Gen: Nano Banana Pro'
