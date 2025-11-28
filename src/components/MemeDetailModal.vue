@@ -52,59 +52,167 @@
       <!-- Right: Content Column -->
       <div class="flex-1 flex flex-col min-w-0 bg-dark-bg">
         
-        <!-- Header Info -->
-        <div class="p-4 md:p-8 bg-gradient-to-b from-slate-800 to-slate-900 border-b border-slate-700 relative shrink-0">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-slate-300 border border-slate-600">
-              Info
-            </span>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600 truncate max-w-[120px]">
-              {{ meme.techName }}
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-5xl font-heading font-black text-white mb-1 tracking-tight truncate">
-            {{ meme.name }}
-          </h2>
-          <p class="text-xs md:text-lg font-medium mb-2 opacity-90 truncate" :style="{ color: meme.color }">{{ meme.tagline }}</p>
-          <div class="relative group cursor-pointer md:cursor-auto" @click="toggleDescription">
-            <p 
-              class="text-slate-400 text-xs md:text-base leading-relaxed transition-all duration-200" 
-              :class="isDescriptionExpanded ? 'line-clamp-none' : 'line-clamp-3 md:line-clamp-none'"
-            >
-              {{ meme.description }}
-            </p>
-            <!-- Mobile Expand Hint -->
-            <div v-if="!isDescriptionExpanded" class="md:hidden flex justify-start mt-1 opacity-60">
-               <span class="text-[10px] bg-slate-800 px-1.5 rounded text-primary flex items-center gap-1">
-                 Expand <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-               </span>
-            </div>
-          </div>
-          
-          <div class="mt-3 md:mt-6 flex flex-wrap gap-3 items-center">
-            <button 
-              @click="downloadAllAssets"
-              :disabled="isDownloading"
-              class="px-3 py-2 md:px-6 md:py-3 bg-primary hover:bg-fuchsia-600 disabled:bg-slate-600 disabled:cursor-wait text-white rounded-lg md:rounded-xl font-bold transition-all shadow-lg shadow-primary/25 flex items-center gap-2 text-xs md:text-base w-full md:w-auto justify-center relative overflow-hidden"
-            >
-              <!-- Loading State -->
-              <template v-if="isDownloading">
-                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <span>{{ downloadProgress }}%</span>
-                <div class="absolute bottom-0 left-0 h-1 bg-white/30 transition-all duration-300" :style="{ width: `${downloadProgress}%` }"></div>
-              </template>
-              
-              <!-- Normal State -->
-              <template v-else>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download
-              </template>
-            </button>
-          </div>
-        </div>
+                <!-- Header Info -->
+        
+                        <div class="p-4 md:p-8 bg-gradient-to-b from-slate-800 to-slate-900 border-b border-slate-700 relative shrink-0 transition-all duration-300">
+        
+                          
+        
+                          <div class="flex items-center gap-2 mb-2">
+        
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-slate-300 border border-slate-600">
+        
+                              Info
+        
+                            </span>
+        
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600 truncate max-w-[120px]">
+        
+                              {{ meme.techName }}
+        
+                            </span>
+        
+                
+        
+                            <!-- Mobile Header Toggle -->
+        
+                            <button 
+        
+                              @click="toggleHeader"
+        
+                              class="ml-auto mr-8 md:hidden p-1.5 text-slate-400 hover:text-white bg-slate-800/50 rounded-full z-30"
+        
+                            >
+        
+                              <svg 
+        
+                                xmlns="http://www.w3.org/2000/svg" 
+        
+                                width="20" 
+        
+                                height="20" 
+        
+                                viewBox="0 0 24 24" 
+        
+                                fill="none" 
+        
+                                stroke="currentColor" 
+        
+                                stroke-width="2" 
+        
+                                stroke-linecap="round" 
+        
+                                stroke-linejoin="round"
+        
+                                class="transition-transform duration-300"
+        
+                                :class="isHeaderExpanded ? 'rotate-0' : 'rotate-180'"
+        
+                              >
+        
+                                <polyline points="18 15 12 9 6 15"></polyline>
+        
+                              </svg>
+        
+                            </button>
+        
+                          </div>
+        
+                          <h2 class="text-2xl md:text-5xl font-heading font-black text-white mb-1 tracking-tight truncate">
+        
+                    {{ meme.name }}
+        
+                  </h2>
+        
+                  
+        
+                  <!-- Collapsible Content -->
+        
+                  <div v-show="isHeaderExpanded" class="md:!block space-y-2 animate-fade-in">
+        
+                    <p class="text-xs md:text-lg font-medium mb-2 opacity-90 truncate" :style="{ color: meme.color }">{{ meme.tagline }}</p>
+        
+                    
+        
+                    <div class="relative group cursor-pointer md:cursor-auto" @click="toggleDescription">
+        
+                      <p 
+        
+                        class="text-slate-400 text-xs md:text-base leading-relaxed transition-all duration-200" 
+        
+                        :class="isDescriptionExpanded ? 'line-clamp-none' : 'line-clamp-3 md:line-clamp-none'"
+        
+                      >
+        
+                        {{ meme.description }}
+        
+                      </p>
+        
+                      <!-- Mobile Expand Hint -->
+        
+                      <div v-if="!isDescriptionExpanded" class="md:hidden flex justify-start mt-1 opacity-60">
+        
+                         <span class="text-[10px] bg-slate-800 px-1.5 rounded text-primary flex items-center gap-1">
+        
+                           Expand <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        
+                         </span>
+        
+                      </div>
+        
+                    </div>
+        
+                    
+        
+                    <div class="pt-1 md:mt-6 flex flex-wrap gap-3 items-center">
+        
+                      <button 
+        
+                        @click="downloadAllAssets"
+        
+                        :disabled="isDownloading"
+        
+                        class="px-3 py-2 md:px-6 md:py-3 bg-primary hover:bg-fuchsia-600 disabled:bg-slate-600 disabled:cursor-wait text-white rounded-lg md:rounded-xl font-bold transition-all shadow-lg shadow-primary/25 flex items-center gap-2 text-xs md:text-base w-full md:w-auto justify-center relative overflow-hidden"
+        
+                      >
+        
+                        <!-- Loading State -->
+        
+                        <template v-if="isDownloading">
+        
+                          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        
+                          </svg>
+        
+                          <span>{{ downloadProgress }}%</span>
+        
+                          <div class="absolute bottom-0 left-0 h-1 bg-white/30 transition-all duration-300" :style="{ width: `${downloadProgress}%` }"></div>
+        
+                        </template>
+        
+                        
+        
+                        <!-- Normal State -->
+        
+                        <template v-else>
+        
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        
+                          Download
+        
+                        </template>
+        
+                      </button>
+        
+                    </div>
+        
+                  </div>
+        
+                </div>
 
         <!-- Scrollable Gallery Grid -->
         <div class="flex-1 overflow-y-auto bg-dark-bg custom-scrollbar relative">
@@ -242,6 +350,7 @@ const props = defineProps<{
 
 defineEmits(['close']);
 
+const isHeaderExpanded = ref(true);
 const isDownloading = ref(false);
 const downloadProgress = ref(0);
 const bgMode = ref<'transparent' | 'white_bg'>('transparent');
@@ -251,6 +360,10 @@ const isDescriptionExpanded = ref(false);
 
 const toggleDescription = () => {
   isDescriptionExpanded.value = !isDescriptionExpanded.value;
+};
+
+const toggleHeader = () => {
+  isHeaderExpanded.value = !isHeaderExpanded.value;
 };
 
 const totalCount = computed(() => {
