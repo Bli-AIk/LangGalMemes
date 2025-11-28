@@ -234,3 +234,26 @@
     source: 'OS-tan Collections'
     url: 'https://www.ostan-collections.net/wiki/index.php/XP-tan'
     copyright: 'Character: Community / Guidelines: Free for non-commercial use'
+
+- id: 13
+  name: 'Hissumi'
+  techName: 'Python'
+  tags: ['Language', 'Scripting', 'Data Science']
+  tagline: "Just work requirements... but don't think for a second that I'm soft. 🐍"
+  description: >
+    A workplace veteran who writes Python out of necessity but handles it with lethal proficiency. Flanked by her two snakes, she's here to prove that Python developers are anything but weak.
+  imageUrl: '/LangGalMemes/characters/hissumi/cover.png'
+  color: '#3776AB'
+  emojiPacks:
+    - name: 'Series 0: Code Monkey'
+      path: '/LangGalMemes/characters/hissumi/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 1: Emotions'
+      path: '/LangGalMemes/characters/hissumi/series_1'
+      pattern: 'emoji_{i}.png'
+      range: [1, 27]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
