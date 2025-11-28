@@ -215,3 +215,22 @@
   credits:
     source: 'Original Character'
     copyright: 'AI Gen: Nano Banana Pro'
+
+- id: 12
+  name: 'XP-tan'
+  techName: 'Windows XP'
+  tags: ['OS', 'Windows', 'Retro']
+  tagline: "Welcome back! I'm keeping all your precious memories safe right here. 💙"
+  description: >
+    The all-rounder girl of the millennium era. She bears the unforgettable and precious memories of countless users. Even now, she stands ready to welcome you... inviting you to reminisce about her "late" self.
+  imageUrl: '/LangGalMemes/characters/xp_tan/cover.png'
+  color: '#245DDA'
+  emojiPacks:
+    - name: 'Series 0: Bliss'
+      path: '/LangGalMemes/characters/xp_tan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'OS-tan Collections'
+    url: 'https://www.ostan-collections.net/wiki/index.php/XP-tan'
+    copyright: 'Character: Community / Guidelines: Free for non-commercial use'
