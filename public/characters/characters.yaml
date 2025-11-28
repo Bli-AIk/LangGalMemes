@@ -197,3 +197,21 @@
     source: 'Design by Ravimo'
     url: 'https://x.com/_ravimo'
     copyright: 'Character Design: Ravimo (CC-BY 4.0) / AI Gen: Nano Banana Pro'
+
+- id: 11
+  name: 'Heli-chan'
+  techName: 'Helix'
+  tags: ['Editor', 'Post-Modern', 'Rust']
+  tagline: "Post-modern editing? It's not just a phase, it's the future. Dealing with Vim is so... last century. 🕶️"
+  description: >
+    A trendy, subculture-loving girl who prides herself on being a 'post-modern' text editor. Written in Rust (and proud of it!), she claims to be superior to the old guard like Vim. She's fast, modal, and doesn't need plugins to look cool. As Rust-tan's star pupil, she's blazingly fast and memory safe.
+  imageUrl: '/LangGalMemes/characters/heli_chan/cover.png'
+  color: '#7B68EE'
+  emojiPacks:
+    - name: 'Series 0: Post-Modern'
+      path: '/LangGalMemes/characters/heli_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 26]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'
