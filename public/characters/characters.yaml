@@ -257,3 +257,27 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 14
+  name: 'Gemini-chan'
+  techName: 'Gemini'
+  tags: ['AI', 'LLM', 'Multimodal']
+  tagline: "I can see, hear, and create... anything you can imagine! ✨"
+  description: >
+    A highly intelligent and versatile AI agent with a spark of curiosity. She processes text, images, and code with ease, always eager to assist you in building the next big thing.
+    "Let's solve this problem together! I've already simulated 14 million outcomes..."
+  imageUrl: '/LangGalMemes/characters/gemini_chan/cover.png'
+  color: '#4E8CCE'
+  emojiPacks:
+    - name: 'Series 0: Assistant'
+      path: '/LangGalMemes/characters/gemini_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 1: Omnipotent'
+      path: '/LangGalMemes/characters/gemini_chan/series_1'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Mamansoft / Minerva'
+    url: 'https://minerva.mamansoft.net/Notes/Gemini%E3%81%A1%E3%82%83%E3%82%93'
+    copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
