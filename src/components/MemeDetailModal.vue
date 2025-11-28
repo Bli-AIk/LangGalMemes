@@ -96,64 +96,66 @@
         <!-- Scrollable Gallery Grid -->
         <div class="flex-1 overflow-y-auto bg-dark-bg custom-scrollbar relative">
              <!-- Sticky Header Inside Grid Area -->
-            <div class="sticky top-0 z-10 bg-dark-bg/95 backdrop-blur border-b border-slate-800/50 px-4 py-2 md:px-8 md:py-4 shadow-lg flex flex-wrap justify-between items-center gap-2">
-              <div class="flex items-center gap-4">
+            <div class="sticky top-0 z-10 bg-dark-bg/95 backdrop-blur border-b border-slate-800/50 px-4 py-2 md:px-8 md:py-4 shadow-lg flex flex-col md:flex-row justify-between md:items-center gap-2">
+              
+              <!-- Top Row: Title & View Mode -->
+              <div class="flex items-center justify-between w-full md:w-auto md:justify-start md:gap-4">
                 <h3 class="text-sm md:text-2xl font-bold text-white flex items-center gap-2">
                   <span class="text-secondary">📂</span> <span class="hidden md:inline">Sticker Gallery</span><span class="md:hidden">Gallery</span>
                 </h3>
                 
-                <!-- View Options -->
-                <div class="flex items-center gap-2">
-                  <!-- Background Toggle -->
-                  <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-1 border border-slate-700">
-                    <button 
-                      @click="bgMode = 'transparent'"
-                      class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
-                      :class="bgMode === 'transparent' ? 'bg-slate-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'"
-                    >
-                      Transparent
-                    </button>
-                    <button 
-                      @click="bgMode = 'white_bg'"
-                      class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
-                      :class="bgMode === 'white_bg' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-200'"
-                    >
-                      White BG
-                    </button>
-                  </div>
-
-                  <!-- Stroke Settings (Only for Transparent) -->
-                  <div v-if="bgMode === 'transparent'" class="hidden sm:flex items-center gap-1.5 bg-slate-800/80 rounded-lg p-1 px-2 border border-slate-700 animate-fade-in">
-                     <!-- Value Display -->
-                     <span class="text-[10px] font-mono font-bold text-slate-300 w-5 text-center select-none">
-                        {{ strokeWidth.toFixed(1) }}
-                     </span>
-                     
-                     <input 
-                       type="range" 
-                       v-model.number="strokeWidth" 
-                       min="0" 
-                       max="1" 
-                       step="0.05"
-                       class="w-14 h-4 bg-transparent appearance-none cursor-pointer [&::-webkit-slider-runnable-track]:h-1 [&::-webkit-slider-runnable-track]:bg-slate-600 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:-mt-1"
-                       title="Stroke Width"
-                     />
-                     
-                     <div class="w-px h-3 bg-slate-700 mx-0.5"></div>
-                     
-                     <input 
-                        type="color" 
-                        v-model="strokeColor"
-                        class="w-4 h-4 rounded cursor-pointer bg-transparent border-none p-0"
-                        title="Stroke Color"
-                     />
-                  </div>
+                <!-- Background Toggle -->
+                <div class="flex items-center gap-1 bg-slate-800/80 rounded-lg p-1 border border-slate-700">
+                  <button 
+                    @click="bgMode = 'transparent'"
+                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                    :class="bgMode === 'transparent' ? 'bg-slate-600 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'"
+                  >
+                    Transparent
+                  </button>
+                  <button 
+                    @click="bgMode = 'white_bg'"
+                    class="px-2 py-1 md:px-3 md:py-1 text-[10px] md:text-xs font-bold rounded-md transition-all"
+                    :class="bgMode === 'white_bg' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-200'"
+                  >
+                    White BG
+                  </button>
                 </div>
               </div>
+
+              <!-- Bottom Row: Settings & Count -->
+              <div class="flex items-center justify-between w-full md:w-auto md:justify-end gap-2">
+                <!-- Stroke Settings (Only for Transparent) -->
+                <div v-if="bgMode === 'transparent'" class="flex items-center gap-1.5 bg-slate-800/80 rounded-lg p-1 px-2 border border-slate-700 animate-fade-in">
+                   <!-- Value Display -->
+                   <span class="text-[10px] font-mono font-bold text-slate-300 w-5 text-center select-none">
+                      {{ strokeWidth.toFixed(1) }}
+                   </span>
+                   
+                   <input 
+                     type="range" 
+                     v-model.number="strokeWidth" 
+                     min="0" 
+                     max="1" 
+                     step="0.05"
+                     class="w-14 h-4 bg-transparent appearance-none cursor-pointer [&::-webkit-slider-runnable-track]:h-1 [&::-webkit-slider-runnable-track]:bg-slate-600 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:-mt-1"
+                     title="Stroke Width"
+                   />
+                   
+                   <div class="w-px h-3 bg-slate-700 mx-0.5"></div>
+                   
+                   <input 
+                      type="color" 
+                      v-model="strokeColor"
+                      class="w-4 h-4 rounded cursor-pointer bg-transparent border-none p-0"
+                      title="Stroke Color"
+                   />
+                </div>
               
-              <span class="text-[10px] md:text-sm font-medium text-slate-400 bg-slate-800 px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-slate-700">
-                {{ totalCount }}
-              </span>
+                <span class="text-[10px] md:text-sm font-medium text-slate-400 bg-slate-800 px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-slate-700">
+                  {{ totalCount }}
+                </span>
+              </div>
             </div>
             
             <!-- Grid Content -->
