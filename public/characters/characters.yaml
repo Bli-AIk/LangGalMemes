@@ -159,3 +159,22 @@
     source: 'Mamansoft / Minerva'
     url: 'https://minerva.mamansoft.net/Notes/VSCode%E3%81%A1%E3%82%83%E3%82%93'
     copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
+
+- id: 9
+  name: 'Neovim-chan'
+  techName: 'Neovim'
+  tags: ['Editor', 'Vim']
+  tagline: "Efficiency is the future! Let's refactor the world! ⚡"
+  description: >
+    A new-age girl inheriting the mantle of the Elder (Vim). She leads the next generation of efficiency-obsessed developers into the future. Fast, extensible, and uncompromising, she believes that editing text should be as fast as thought itself.
+  imageUrl: '/LangGalMemes/characters/neovim_chan/cover.png'
+  color: '#57A143'
+  emojiPacks:
+    - name: 'Series 0: Hyperspeed'
+      path: '/LangGalMemes/characters/neovim_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Mamansoft / Minerva'
+    url: 'https://minerva.mamansoft.net/Notes/Neovim%E3%81%A1%E3%82%83%E3%82%93'
+    copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
