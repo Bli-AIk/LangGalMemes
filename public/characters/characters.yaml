@@ -281,3 +281,34 @@
     source: 'Mamansoft / Minerva'
     url: 'https://minerva.mamansoft.net/Notes/Gemini%E3%81%A1%E3%82%83%E3%82%93'
     copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
+
+- id: 15
+  name: 'Android-chan'
+  techName: 'Android'
+  tags: ['OS', 'Mobile', 'Google']
+  tagline: "Updating system... Don't worry, I'm already changing the world. 🤖💚"
+  description: >
+    A young mechanical girl who is steadily (or perhaps already has) completely revolutionized the world. She's ubiquitous, adaptable, and always evolving, powering billions of devices with a smile.
+  imageUrl: '/LangGalMemes/characters/android_chan/cover.png'
+  color: '#3DDC84'
+  emojiPacks:
+    - name: 'Series 0: Daily Life'
+      path: '/LangGalMemes/characters/android_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 1: Arguments'
+      path: '/LangGalMemes/characters/android_chan/series_1'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 2: Commentary'
+      path: '/LangGalMemes/characters/android_chan/series_2'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 3: Deep Dive'
+      path: '/LangGalMemes/characters/android_chan/series_3'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Pixiv'
+    url: 'https://www.pixiv.net/artworks/29919698'
+    copyright: 'Concept: Community / AI Gen: Nano Banana Pro'
