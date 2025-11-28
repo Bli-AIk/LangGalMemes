@@ -102,3 +102,22 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 6
+  name: 'Acchan'
+  techName: 'Arch Linux'
+  tags: ['OS', 'Linux']
+  tagline: "If you are willing to listen patiently, Acchan will tell you everything."
+  description: >
+    A capable and obedient tsundere loli... assuming her master is a 'competent user'. She offers complete control to those who take full responsibility for their system, satisfying their 'wicked desires'. However, even if her master doesn't know how to handle her yet or how to install and configure certain software, as long as they are willing to calm down and listen patiently, Acchan will share all her knowledge.
+  imageUrl: '/LangGalMemes/characters/acchan/cover.png'
+  color: '#1793d1'
+  emojiPacks:
+    - name: 'Series 0: Rolling Release'
+      path: '/LangGalMemes/characters/acchan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design by Ravimo'
+    url: 'https://x.com/_ravimo'
+    copyright: 'Character Design: Ravimo (CC-BY 4.0) / AI Gen: Nano Banana Pro'
