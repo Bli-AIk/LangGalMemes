@@ -74,61 +74,119 @@
         
                 
         
-                            <!-- Mobile Header Toggle -->
+                                        <!-- Mobile Header Toggle -->
         
-                            <button 
+                
         
-                              @click="toggleHeader"
+                                        <button 
         
-                              class="ml-auto mr-8 md:hidden p-1.5 text-slate-400 hover:text-white bg-slate-800/50 rounded-full z-30"
+                
         
-                            >
+                                          @click="toggleHeader"
         
-                              <svg 
+                
         
-                                xmlns="http://www.w3.org/2000/svg" 
+                                          class="ml-auto mr-8 p-1.5 text-slate-400 hover:text-white bg-slate-800/50 rounded-full z-30"
         
-                                width="20" 
+                
         
-                                height="20" 
+                                          :class="{ 'md:hidden': !isShortScreen }"
         
-                                viewBox="0 0 24 24" 
+                
         
-                                fill="none" 
+                                        >
         
-                                stroke="currentColor" 
+                
         
-                                stroke-width="2" 
+                                          <svg 
         
-                                stroke-linecap="round" 
+                
         
-                                stroke-linejoin="round"
+                                            xmlns="http://www.w3.org/2000/svg" 
         
-                                class="transition-transform duration-300"
+                
         
-                                :class="isHeaderExpanded ? 'rotate-0' : 'rotate-180'"
+                                            width="20" 
         
-                              >
+                
         
-                                <polyline points="18 15 12 9 6 15"></polyline>
+                                            height="20" 
         
-                              </svg>
+                
         
-                            </button>
+                                            viewBox="0 0 24 24" 
         
-                          </div>
+                
         
-                          <h2 class="text-2xl md:text-5xl font-heading font-black text-white mb-1 tracking-tight truncate">
+                                            fill="none" 
         
-                    {{ meme.name }}
+                
         
-                  </h2>
+                                            stroke="currentColor" 
         
-                  
+                
         
-                  <!-- Collapsible Content -->
+                                            stroke-width="2" 
         
-                  <div v-show="isHeaderExpanded" class="md:!block space-y-2 animate-fade-in">
+                
+        
+                                            stroke-linecap="round" 
+        
+                
+        
+                                            stroke-linejoin="round"
+        
+                
+        
+                                            class="transition-transform duration-300"
+        
+                
+        
+                                            :class="isHeaderExpanded ? 'rotate-0' : 'rotate-180'"
+        
+                
+        
+                                          >
+        
+                
+        
+                                            <polyline points="18 15 12 9 6 15"></polyline>
+        
+                
+        
+                                          </svg>
+        
+                
+        
+                                        </button>
+        
+                
+        
+                                      </div>
+        
+                
+        
+                                      <h2 class="text-2xl md:text-5xl font-heading font-black text-white mb-1 tracking-tight truncate">
+        
+                
+        
+                                        {{ meme.name }}
+        
+                
+        
+                                      </h2>
+        
+                
+        
+                                      
+        
+                
+        
+                                      <!-- Collapsible Content -->
+        
+                
+        
+                                      <div v-show="isHeaderExpanded" class="space-y-2 animate-fade-in" :class="{ 'md:!block': !isShortScreen }">
         
                     <p class="text-xs md:text-lg font-medium mb-2 opacity-90 truncate" :style="{ color: meme.color }">{{ meme.tagline }}</p>
         
@@ -339,7 +397,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import type { Meme, EmojiPack } from '../data/memes';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
@@ -357,6 +415,20 @@ const bgMode = ref<'transparent' | 'white_bg'>('transparent');
 const strokeWidth = ref(0.2);
 const strokeColor = ref('#ffffff');
 const isDescriptionExpanded = ref(false);
+const isShortScreen = ref(false);
+
+const checkScreenHeight = () => {
+  isShortScreen.value = window.innerHeight < 800;
+};
+
+onMounted(() => {
+  checkScreenHeight();
+  window.addEventListener('resize', checkScreenHeight);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkScreenHeight);
+});
 
 const toggleDescription = () => {
   isDescriptionExpanded.value = !isDescriptionExpanded.value;
