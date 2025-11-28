@@ -80,7 +80,7 @@ import { loadMemes, type Meme } from '../data/memes';
 import MemeCard from './MemeCard.vue';
 import MemeDetailModal from './MemeDetailModal.vue';
 
-const categories = ['All', 'Language', 'Engine', 'Editor', 'Runtime'];
+const categories = ['All', 'Language', 'Engine', 'Editor', 'OS', 'Utils'];
 const activeTab = ref('All');
 const memes = ref<Meme[]>([]);
 const loading = ref(true);
@@ -90,6 +90,14 @@ const filteredMemes = computed(() => {
   if (activeTab.value === 'All') {
     return memes.value;
   }
+  
+  if (activeTab.value === 'Utils') {
+    const mainCategories = ['Language', 'Engine', 'Editor', 'OS'];
+    return memes.value.filter(meme => 
+      !meme.tags.some(tag => mainCategories.includes(tag))
+    );
+  }
+
   return memes.value.filter(meme => meme.tags.includes(activeTab.value));
 });
 
