@@ -377,7 +377,13 @@
                          />
                       </div>
                       <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                         <a :href="emoji[bgMode]" download target="_blank" class="p-1.5 md:p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-4 md:h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                         <button 
+                           @click.stop="downloadSingleImage(emoji[bgMode])" 
+                           class="p-1.5 md:p-2 bg-white rounded-full text-black hover:bg-primary hover:text-white transition-colors"
+                           title="Download image"
+                         >
+                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-4 md:h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                         </button>
                       </div>
                     </div>
                   </div>
@@ -460,6 +466,25 @@ const previewStyle = computed(() => {
     filter: 'url(#sticker-outline)'
   };
 });
+
+const downloadSingleImage = async (url: string) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${url}`);
+    let blob = await response.blob();
+    
+    // Apply stroke if needed
+    blob = await processImageWithStroke(blob, actualStrokeWidth.value, strokeColor.value);
+    
+    const cleanUrl = url.split('?')[0];
+    const filename = cleanUrl?.split('/').pop() || 'image.png';
+    
+    saveAs(blob, filename);
+  } catch (err) {
+    console.error("Download failed:", err);
+    alert("Failed to download image.");
+  }
+};
 
 const processImageWithStroke = async (blob: Blob, width: number, color: string): Promise<Blob> => {
   if (bgMode.value !== 'transparent' || width <= 0) return blob;
