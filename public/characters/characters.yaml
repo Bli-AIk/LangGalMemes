@@ -121,3 +121,22 @@
     source: 'Design by Ravimo'
     url: 'https://x.com/_ravimo'
     copyright: 'Character Design: Ravimo (CC-BY 4.0) / AI Gen: Nano Banana Pro'
+
+- id: 7
+  name: 'Tōko Madobe'
+  techName: 'Windows 10'
+  tags: ['OS', 'Windows', 'DSP']
+  tagline: "The heart of your custom rig! Let's push those frames to the limit! 🎮"
+  description: >
+    The energetic poster girl for the DSP edition, designed to be the perfect soul for your custom-built machine. She thrives on high-performance hardware and gaming.
+    "Nice specs! But a powerful PC needs a powerful soul. Install me, and we'll unlock your system's true potential!"
+  imageUrl: '/LangGalMemes/characters/toko_madobe/cover.png'
+  color: '#0078d7'
+  emojiPacks:
+    - name: 'Series 0: DSP Edition'
+      path: '/LangGalMemes/characters/toko_madobe/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original character by Windows Navi+ DSP Promotion Team for Windows 10 DSP edition, Japan.'
+    copyright: 'Character: Windows Navi+ (Unofficial) / AI Gen: Nano Banana Pro'
