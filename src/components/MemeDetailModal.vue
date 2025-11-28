@@ -66,11 +66,11 @@
         
                             </span>
         
-                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600 truncate max-w-[120px]">
+                                        <span class="px-2 py-0.5 rounded-lg md:rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600 md:truncate md:max-w-[120px] whitespace-normal h-auto text-center">
         
-                              {{ meme.techName }}
+                                          {{ meme.techName }}
         
-                            </span>
+                                        </span>
         
                 
         
@@ -301,7 +301,7 @@
 
                      <div class="h-px bg-slate-800 flex-grow"></div>
                   </div>
-                  <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
+                  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
                     <div v-for="(emoji, index) in pack.items" :key="index" class="group relative aspect-square bg-slate-800 rounded-lg md:rounded-xl border border-slate-700 overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
                       <!-- Checkerboard background for transparent preview -->
                       <div 
