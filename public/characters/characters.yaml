@@ -140,3 +140,22 @@
   credits:
     source: 'Original character by Windows Navi+ DSP Promotion Team for Windows 10 DSP edition, Japan.'
     copyright: 'Character: Windows Navi+ (Unofficial) / AI Gen: Nano Banana Pro'
+
+- id: 8
+  name: 'VSCode-chan'
+  techName: 'VS Code'
+  tags: ['Editor', 'Dev Tool']
+  tagline: "Seeking the perfect balance in the vast ocean of code. 💙"
+  description: >
+    A young, innocent girl navigating the vast ocean of programming. She seeks the delicate balance between open-source freedom and corporate influence, and between modern ease-of-use and the weight of history.
+  imageUrl: '/LangGalMemes/characters/vscode_chan/cover.png'
+  color: '#007acc'
+  emojiPacks:
+    - name: 'Series 0: Extension'
+      path: '/LangGalMemes/characters/vscode_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Mamansoft / Minerva'
+    url: 'https://minerva.mamansoft.net/Notes/VSCode%E3%81%A1%E3%82%83%E3%82%93'
+    copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'

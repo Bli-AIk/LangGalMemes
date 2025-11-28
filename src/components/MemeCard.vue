@@ -75,6 +75,24 @@
             #{{ tag }}
           </span>
         </div>
+        
+        <!-- Credits -->
+        <div class="mt-3 pt-2 border-t border-white/5 text-[10px] text-slate-600 truncate group-hover:text-slate-500 transition-colors" :title="meme.credits.copyright">
+          <span class="mr-1">Source:</span>
+          <a 
+            v-if="meme.credits.url" 
+            :href="meme.credits.url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hover:text-primary hover:underline decoration-primary/50 transition-colors z-30 relative"
+            @click.stop
+          >
+            {{ meme.credits.source }}
+          </a>
+          <span v-else>
+            {{ meme.credits.source }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
