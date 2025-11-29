@@ -337,3 +337,29 @@
     source: 'Pixiv'
     url: 'https://www.pixiv.net/artworks/29919698'
     copyright: 'Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 16
+  name: 'iPhone大小姐'
+  techName: 'iOS'
+  officialUrl: 'https://www.apple.com/ios/'
+  tags: ['系统', '移动端', 'Apple']
+  tagline: "这就是魔法。这就是iPhone。"
+  description: >
+    出身名门的大小姐，举止优雅但带着些许傲慢。她追求极致的简约与美学，对自己打造的“围墙花园”感到无比自豪。
+
+    “想要连接我？请先购买专用的转接头吧，庶民。这可是为了你好。”
+  imageUrl: '/LangGalMemes/characters/iphone_chan/cover.png'
+  color: '#a9abad'
+  emojiPacks:
+    - name: '系列 0: 日常'
+      path: '/LangGalMemes/characters/iphone_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: '系列 1: 生态系统'
+      path: '/LangGalMemes/characters/iphone_chan/series_1'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Smart PHONE Girl by POP'
+    url: 'http://smartphonegirl.jp/'
+    copyright: 'Character Design: POP / Smart PHONE Girl'

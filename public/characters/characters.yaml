@@ -337,3 +337,29 @@
     source: 'Pixiv'
     url: 'https://www.pixiv.net/artworks/29919698'
     copyright: 'Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 16
+  name: 'iPhone-chan'
+  techName: 'iOS'
+  officialUrl: 'https://www.apple.com/ios/'
+  tags: ['OS', 'Mobile', 'Apple']
+  tagline: "It's not just a phone, it's an experience."
+  description: >
+    A high-class, wealthy "Ojou-sama" who prides herself on elegance and simplicity. She lives in a beautiful walled garden and looks down on "fragmented" commoners.
+
+    "You want to connect with me? Buy a dongle first. It's for your own protection, you know."
+  imageUrl: '/LangGalMemes/characters/iphone_chan/cover.png'
+  color: '#a9abad'
+  emojiPacks:
+    - name: 'Series 0: Daily Life'
+      path: '/LangGalMemes/characters/iphone_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: 'Series 1: Ecosystem'
+      path: '/LangGalMemes/characters/iphone_chan/series_1'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Smart PHONE Girl by POP'
+    url: 'http://smartphonegirl.jp/'
+    copyright: 'Character Design: POP / Smart PHONE Girl'
