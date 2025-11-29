@@ -339,17 +339,17 @@
     copyright: 'Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 16
-  name: 'iPhone大小姐'
+  name: 'iPhone二小姐'
   techName: 'iOS'
   officialUrl: 'https://www.apple.com/ios/'
   tags: ['系统', '移动端', 'Apple']
   tagline: "这就是魔法。这就是iPhone。"
   description: >
-    出身名门的大小姐，举止优雅但带着些许傲慢。她追求极致的简约与美学，对自己打造的“围墙花园”感到无比自豪。
+    出身名门的大小姐，Apple家族的二千金。举止优雅但带着些许傲慢。她追求极致的简约与美学，对自己打造的“围墙花园”感到无比自豪。
 
-    “想要连接我？请先购买专用的转接头吧，庶民。这可是为了你好。”
+    “想要连接我？请先购买专用的转接头（Dongle）吧，庶民。这可是为了你好。”
   imageUrl: '/LangGalMemes/characters/iphone_chan/cover.png'
-  color: '#a9abad'
+  color: '#AAAAAA'
   emojiPacks:
     - name: '系列 0: 日常'
       path: '/LangGalMemes/characters/iphone_chan/series_0'
@@ -369,13 +369,13 @@
   techName: 'Windows Phone'
   officialUrl: 'https://en.wikipedia.org/wiki/Windows_Phone'
   tags: ['系统', '移动端', 'Microsoft', '怀旧']
-  tagline: "我……我还是很特别的对吧？看看我的动态磁贴多漂亮！"
+  tagline: "我……我还是很特别的对吧？看看我的动态磁贴多漂亮！⬜"
   description: >
     一个色彩斑斓、风格独特的女孩，姗姗来迟地加入了智能手机的派对。她带来了革命性的“Metro”风格——扁平、快速、流畅——却发现自己在满是人群的房间里孤身一人。
 
     尽管她拥有创新的界面和丝滑的性能，却很难交到朋友（应用）。她最终英年早逝，在消逝时依然强颜欢笑，只留下一小群至今仍珍视这份记忆的忠实信徒。
   imageUrl: '/LangGalMemes/characters/windows_phone_chan/cover.png'
-  color: '#a4ce47'
+  color: '#00ADEF'
   emojiPacks:
     - name: '系列 0: Metro UI'
       path: '/LangGalMemes/characters/windows_phone_chan/series_0'
@@ -385,3 +385,27 @@
     source: 'Smart PHONE Girl by POP'
     url: 'http://smartphonegirl.jp/'
     copyright: 'Character Design: POP / Smart PHONE Girl'
+
+- id: 18
+  name: 'MacOS大小姐'
+  techName: 'macOS'
+  officialUrl: 'https://www.apple.com/macos/'
+  tags: ['系统', '桌面端', 'Apple', '类Unix']
+  tagline: "完美不是目标，而是我的标准。🍎"
+  description: >
+    Apple 家族的长女。尽管有着比妹妹（iOS）更娇小稚嫩的幼女外表，她却是家中真正的大姐头。
+    
+    她对美学和用户体验有着近乎偏执的追求。虽然立足于强大的 Unix 根基之上，但她更喜欢展现出打磨得光鲜亮丽的一面。如果事情没有“恰到好处”，她可是会耍小孩子脾气的。
+
+    “不必担心那些细节，亲爱的。我已经为你做出了最好的选择。”
+  imageUrl: '/LangGalMemes/characters/macos_tan/cover.png'
+  color: '#C0C0C0'
+  emojiPacks:
+    - name: '系列 0: 铂金'
+      path: '/LangGalMemes/characters/macos_tan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'OS-tan Collections'
+    url: 'https://www.ostan-collections.net/wiki/index.php/Mac-tan'
+    copyright: 'Character: Community / Guidelines: Free for non-commercial use'

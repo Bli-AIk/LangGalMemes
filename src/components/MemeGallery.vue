@@ -109,7 +109,7 @@ const filteredMemes = computed(() => {
 
 const selectedMeme = ref<Meme | null>(null);
 
-const hexToHue = (hex: string): number => {
+const getSortKey = (hex: string): number => {
   const r = parseInt(hex.slice(1, 3), 16) / 255;
   const g = parseInt(hex.slice(3, 5), 16) / 255;
   const b = parseInt(hex.slice(5, 7), 16) / 255;
@@ -117,7 +117,23 @@ const hexToHue = (hex: string): number => {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   const d = max - min;
+  const l = (max + min) / 2;
 
+  // Calculate Saturation
+  let s = 0;
+  if (max !== min) {
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+  }
+
+  // If saturation is very low, treat as grayscale and move to end
+  if (s < 0.1) {
+    // Sort grayscale by lightness descending (Light/Silver -> Dark/Black)
+    // Base value 2.0 ensures they come after all hues (0.0 - 1.0)
+    // (1 - l) ensures higher lightness gives a lower score within this range
+    return 2.0 + (1 - l);
+  }
+
+  // Calculate Hue for colorful items
   let h = 0;
   if (d === 0) {
     h = 0;
@@ -137,7 +153,7 @@ const fetchMemes = async () => {
   error.value = null;
   try {
     const rawMemes = await loadMemes(locale.value);
-    memes.value = rawMemes.sort((a, b) => hexToHue(a.color) - hexToHue(b.color));
+    memes.value = rawMemes.sort((a, b) => getSortKey(a.color) - getSortKey(b.color));
   } catch (err) {
     error.value = 'Failed to load characters data.';
     console.error(err);
