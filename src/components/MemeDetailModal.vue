@@ -59,9 +59,18 @@
             <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-slate-300 border border-slate-600">
               {{ t('modal.info') }}
             </span>
-            <span class="px-2 py-0.5 rounded-lg md:rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-primary border border-slate-600 md:truncate md:max-w-[120px] whitespace-normal h-auto text-center">
+            
+            <component 
+              :is="meme.officialUrl ? 'a' : 'span'"
+              :href="meme.officialUrl"
+              :target="meme.officialUrl ? '_blank' : undefined"
+              :rel="meme.officialUrl ? 'noopener noreferrer' : undefined"
+              class="px-2 py-0.5 rounded-lg md:rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-700 border border-slate-600 md:truncate md:max-w-[120px] whitespace-normal h-auto text-center transition-all duration-200"
+              :class="{ 'hover:underline hover:scale-105': meme.officialUrl }"
+              :style="{ color: meme.color }"
+            >
               {{ meme.techName }}
-            </span>
+            </component>
 
             <!-- Mobile Header Toggle -->
             <button 

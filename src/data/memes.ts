@@ -14,6 +14,7 @@ export interface Meme {
   id: number;
   name: string;
   techName: string;
+  officialUrl?: string;
   tags: string[];
   tagline: string;
   description: string;

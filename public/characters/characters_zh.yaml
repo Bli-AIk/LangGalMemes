@@ -1,6 +1,7 @@
 - id: 1
   name: 'Rust酱'
   techName: 'Rust'
+  officialUrl: 'https://www.rust-lang.org/'
   tags: ['语言', '系统级']
   tagline: '哈？又段错误了？真可怜。♡'
   description: >
@@ -26,6 +27,7 @@
 - id: 2
   name: '大鸟琥珀'
   techName: 'Unity'
+  officialUrl: 'https://unity.com/'
   tags: ['引擎', '游戏开发']
   tagline: "资源加载完毕！让我们一起构建梦想世界吧！☆"
   description: >
@@ -51,6 +53,7 @@
 - id: 3
   name: '莎露'
   techName: 'C#'
+  officialUrl: 'https://dotnet.microsoft.com/languages/csharp'
   tags: ['语言', '企业级']
   tagline: "运行时魔法！万物皆对象……大概吧。✨"
   description: >
@@ -72,6 +75,7 @@
 - id: 4
   name: '嘉美卡'
   techName: 'GameMaker'
+  officialUrl: 'https://gamemaker.io/'
   tags: ['引擎', '游戏开发']
   tagline: "拖拽，放置，完成！游戏开发属于每个人！🎮"
   description: "一个对编程和游戏开发充满好奇的高中女生。虽然她从可视化脚本起步，但很快就掌握了 GML 的力量。对独立游戏总是充满热情！"
@@ -89,6 +93,7 @@
 - id: 5
   name: '丽卡·帕因特'
   techName: 'C++'
+  officialUrl: 'https://isocpp.org/'
   tags: ['语言', '系统级']
   tagline: "遗留代码不仅仅是代码，它是遗产。尊重它。"
   description: >
@@ -110,6 +115,7 @@
 - id: 6
   name: '阿祺'
   techName: 'Arch Linux'
+  officialUrl: 'https://archlinux.org/'
   tags: ['系统', 'Linux']
   tagline: "如果你愿意耐心倾听，阿祺会告诉你一切。"
   description: >
@@ -131,6 +137,7 @@
 - id: 7
   name: '窗边藤子'
   techName: 'Windows 10'
+  officialUrl: 'https://www.microsoft.com/windows/'
   tags: ['系统', 'Windows', 'DSP']
   tagline: "你定制装备的核心！让我们把帧率推向极限！🎮"
   description: >
@@ -151,6 +158,7 @@
 - id: 8
   name: 'VSCode酱'
   techName: 'VS Code'
+  officialUrl: 'https://code.visualstudio.com/'
   tags: ['编辑器', '开发工具']
   tagline: "在浩瀚的代码海洋中寻找完美的平衡。💙"
   description: >
@@ -170,6 +178,7 @@
 - id: 9
   name: 'Neovim酱'
   techName: 'Neovim'
+  officialUrl: 'https://neovim.io/'
   tags: ['编辑器', 'Vim']
   tagline: "效率即未来！让我们重构世界！⚡"
   description: >
@@ -189,6 +198,7 @@
 - id: 10
   name: '莱薇酱'
   techName: 'Linux Kernel'
+  officialUrl: 'https://kernel.org/'
   tags: ['系统', '内核', 'Linux']
   tagline: "准备好潜入源码了吗？让我们一起编译更美好的未来！🐧✨"
   description: >
@@ -208,6 +218,7 @@
 - id: 11
   name: '赫莉酱'
   techName: 'Helix'
+  officialUrl: 'https://helix-editor.com/'
   tags: ['编辑器', '后现代', 'Rust']
   tagline: "后现代编辑？这可不是什么一阵风的潮流，它是未来哦。Vim 那套——现在看起来可真是……上个世纪的玩意儿了。🕶️"
   description: >
@@ -228,6 +239,7 @@
 - id: 12
   name: 'XP娘'
   techName: 'Windows XP'
+  officialUrl: 'https://www.microsoft.com/'
   tags: ['系统', 'Windows', '复古']
   tagline: "欢迎回来！我会在这里保管你所有珍贵的回忆。💙"
   description: >
@@ -247,6 +259,7 @@
 - id: 13
   name: '希丝美'
   techName: 'Python'
+  officialUrl: 'https://www.python.org/'
   tags: ['语言', '脚本', '数据科学']
   tagline: "虽然只是工作需要……别以为我心软。🐍"
   description: >
@@ -270,6 +283,7 @@
 - id: 14
   name: 'Gemini酱'
   techName: 'Gemini'
+  officialUrl: 'https://deepmind.google/technologies/gemini/'
   tags: ['AI', '大语言模型', '多模态']
   tagline: "我能看，能听，能创造……任何你能想象的东西！✨"
   description: >
@@ -295,6 +309,7 @@
 - id: 15
   name: '安卓娘'
   techName: 'Android'
+  officialUrl: 'https://www.android.com/'
   tags: ['系统', '移动端', 'Google']
   tagline: "系统更新中……别担心，我已经改变了世界。🤖💚"
   description: >

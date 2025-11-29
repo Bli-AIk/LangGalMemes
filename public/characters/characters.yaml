@@ -1,6 +1,7 @@
 - id: 1
   name: 'Rust-tan'
   techName: 'Rust'
+  officialUrl: 'https://www.rust-lang.org/'
   tags: ['Language', 'Systems']
   tagline: 'Huh? Segfault again? Pathetic. ♡'
   description: >
@@ -26,6 +27,7 @@
 - id: 2
   name: 'Otori Kohaku'
   techName: 'Unity'
+  officialUrl: 'https://unity.com/'
   tags: ['Engine', 'Game Dev']
   tagline: "Assets loaded! Let's build your dream world together! ☆"
   description: >
@@ -51,6 +53,7 @@
 - id: 3
   name: 'Sharu'
   techName: 'C#'
+  officialUrl: 'https://dotnet.microsoft.com/languages/csharp'
   tags: ['Language', 'Enterprise']
   tagline: "Runtime Magic! Everything is an object... probably. ✨"
   description: >
@@ -72,6 +75,7 @@
 - id: 4
   name: 'Jameca'
   techName: 'GameMaker'
+  officialUrl: 'https://gamemaker.io/'
   tags: ['Engine', 'Game Dev']
   tagline: "Drag, drop, done! Game dev is for everyone! 🎮"
   description: "A high school girl curious about programming and game development. While she starts with visual scripting, she's quickly learning the power of GML. Always enthusiastic about indie games!"
@@ -89,6 +93,7 @@
 - id: 5
   name: 'Rika Pointer'
   techName: 'C++'
+  officialUrl: 'https://isocpp.org/'
   tags: ['Language', 'Systems']
   tagline: "Legacy code isn't just code, it's heritage. Respect it."
   description: >
@@ -110,6 +115,7 @@
 - id: 6
   name: 'Acchan'
   techName: 'Arch Linux'
+  officialUrl: 'https://archlinux.org/'
   tags: ['OS', 'Linux']
   tagline: "If you are willing to listen patiently, Acchan will tell you everything."
   description: >
@@ -131,6 +137,7 @@
 - id: 7
   name: 'Tōko Madobe'
   techName: 'Windows 10'
+  officialUrl: 'https://www.microsoft.com/windows/'
   tags: ['OS', 'Windows', 'DSP']
   tagline: "The heart of your custom rig! Let's push those frames to the limit! 🎮"
   description: >
@@ -151,6 +158,7 @@
 - id: 8
   name: 'VSCode-chan'
   techName: 'VS Code'
+  officialUrl: 'https://code.visualstudio.com/'
   tags: ['Editor', 'Dev Tool']
   tagline: "Seeking the perfect balance in the vast ocean of code. 💙"
   description: >
@@ -170,6 +178,7 @@
 - id: 9
   name: 'Neovim-chan'
   techName: 'Neovim'
+  officialUrl: 'https://neovim.io/'
   tags: ['Editor', 'Vim']
   tagline: "Efficiency is the future! Let's refactor the world! ⚡"
   description: >
@@ -189,6 +198,7 @@
 - id: 10
   name: 'Levi-chan'
   techName: 'Linux Kernel'
+  officialUrl: 'https://kernel.org/'
   tags: ['OS', 'Kernel', 'Linux']
   tagline: "Ready to dive into the source? Let's compile a brighter future together! 🐧✨"
   description: >
@@ -208,6 +218,7 @@
 - id: 11
   name: 'Heli-chan'
   techName: 'Helix'
+  officialUrl: 'https://helix-editor.com/'
   tags: ['Editor', 'Post-Modern', 'Rust']
   tagline: "Post-modern editing? It's not just a phase, it's the future. Dealing with Vim is so... last century. 🕶️"
   description: >
@@ -228,6 +239,7 @@
 - id: 12
   name: 'XP-tan'
   techName: 'Windows XP'
+  officialUrl: 'https://www.microsoft.com/'
   tags: ['OS', 'Windows', 'Retro']
   tagline: "Welcome back! I'm keeping all your precious memories safe right here. 💙"
   description: >
@@ -247,6 +259,7 @@
 - id: 13
   name: 'Hissumi'
   techName: 'Python'
+  officialUrl: 'https://www.python.org/'
   tags: ['Language', 'Scripting', 'Data Science']
   tagline: "Just work requirements... but don't think for a second that I'm soft. 🐍"
   description: >
@@ -270,6 +283,7 @@
 - id: 14
   name: 'Gemini-chan'
   techName: 'Gemini'
+  officialUrl: 'https://deepmind.google/technologies/gemini/'
   tags: ['AI', 'LLM', 'Multimodal']
   tagline: "I can see, hear, and create... anything you can imagine! ✨"
   description: >
@@ -295,6 +309,7 @@
 - id: 15
   name: 'Android-chan'
   techName: 'Android'
+  officialUrl: 'https://www.android.com/'
   tags: ['OS', 'Mobile', 'Google']
   tagline: "Updating system... Don't worry, I'm already changing the world. 🤖💚"
   description: >
