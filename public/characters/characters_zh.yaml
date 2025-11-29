@@ -469,7 +469,7 @@
   description: >
     年轻至极，活力四射，火力全开，准备带你进入 Java 生态密林！
     
-    “别急，先抄点语法糖版权信息写OC。”
+    “别急，我先抄点语法糖（”
   imageUrl: '/LangGalMemes/characters/kotlin_chan/cover.png'
   color: '#7F52FF'
   emojiPacks:
@@ -510,7 +510,7 @@
   tags: ['Web', '二进制', '高性能']
   tagline: "高效执行中。不允许运行时错误。⚡"
   description: >
-    她表面上冷静、理性、效率至上，瓦茜说话简洁，语气甚至带点机械感。
+    她表面上冷静、理性、效率至上、说话简洁，语气甚至带点机械感。
     
     但在冷酷的外表下，她对新事物充满好奇，极其享受“编译成功”带来的成就感。令人意外的是，她对“脆弱的旧系统”反而有着温柔和耐心的一面。
     
@@ -520,6 +520,31 @@
   emojiPacks:
     - name: '系列 0: 汇编'
       path: '/LangGalMemes/characters/wasi_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'
+
+- id: 24
+  name: 'Go酱'
+  techName: 'Go'
+  officialUrl: 'https://go.dev/'
+  tags: ['语言', '系统级', '后端', '并发']
+  tagline: "简单、快速、高效。要和我一起挖地道吗？🐹"
+  description: >
+    一个穿着蓝色地鼠连帽衫的务实派活力少女。
+    
+    她讨厌不必要的复杂性，坚信做事情只有一种正确的方式（也就是她的方式，虽然某只螃蟹不同意）。
+
+    她是多任务处理的大师——可以同时处理成千上万个任务而面不改色！
+
+    “为什么要搞得那么复杂？'if err != nil' 就够了嘛！”
+  imageUrl: '/LangGalMemes/characters/go_chan/cover.png'
+  color: '#00ADD8'
+  emojiPacks:
+    - name: '系列 0: 协程'
+      path: '/LangGalMemes/characters/go_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
   credits:

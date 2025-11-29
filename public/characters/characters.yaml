@@ -525,3 +525,26 @@
   credits:
     source: 'Original Character'
     copyright: 'AI Gen: Nano Banana Pro'
+
+- id: 24
+  name: 'Go-chan'
+  techName: 'Go'
+  officialUrl: 'https://go.dev/'
+  tags: ['Language', 'Systems', 'Backend', 'Concurrency']
+  tagline: "Simple, fast, and productive. Want to dig some tunnels with me? 🐹"
+  description: >
+    A pragmatic and energetic girl wearing a blue gopher hoodie. She hates unnecessary complexity and believes there's only one right way to do things (hers, although a certain crab disagreed).
+
+    She's incredibly good at multitasking—she can juggle thousands of tasks at once without breaking a sweat!
+
+    "Why complicate things? 'if err != nil' is all you need!"
+  imageUrl: '/LangGalMemes/characters/go_chan/cover.png'
+  color: '#00ADD8'
+  emojiPacks:
+    - name: 'Series 0: Goroutine'
+      path: '/LangGalMemes/characters/go_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'
