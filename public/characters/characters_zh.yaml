@@ -459,3 +459,24 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 21
+  name: 'Kotlin酱'
+  techName: 'Kotlin'
+  officialUrl: 'https://kotlinlang.org/'
+  tags: ['语言', '移动端', 'JVM']
+  tagline: "简洁、安全且互操作！Java 的酷妹妹。💜"
+  description: >
+    年轻至极，活力四射，火力全开，准备带你进入 Java 生态密林！
+    
+    “别急，我先抄点语法糖（”
+  imageUrl: '/LangGalMemes/characters/kotlin_chan/cover.png'
+  color: '#7F52FF'
+  emojiPacks:
+    - name: '系列 0: 协程'
+      path: '/LangGalMemes/characters/kotlin_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'Syntactic Sugar Copyright: JetBrains / AI Gen: Nano Banana Pro'

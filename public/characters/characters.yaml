@@ -438,3 +438,24 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 21
+  name: 'Kotlin-chan'
+  techName: 'Kotlin'
+  officialUrl: 'https://kotlinlang.org/'
+  tags: ['Language', 'Mobile', 'JVM']
+  tagline: "Concise, safe, and interoperable! Java's cool younger sister. 💜"
+  description: >
+    A young, energetic, and firepower-full girl ready to take you into the Java ecological jungle! She's modern, concise, and eliminates the verbosity of the past.
+
+    "Don't rush! I've got all the syntactic sugar you need right here."
+  imageUrl: '/LangGalMemes/characters/kotlin_chan/cover.png'
+  color: '#7F52FF'
+  emojiPacks:
+    - name: 'Series 0: Coroutines'
+      path: '/LangGalMemes/characters/kotlin_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'Syntactic Sugar Copyright: JetBrains / AI Gen: Nano Banana Pro'
