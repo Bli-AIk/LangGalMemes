@@ -437,3 +437,25 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 20
+  name: '艾尔菲'
+  techName: 'PHP'
+  officialUrl: 'https://www.php.net/'
+  tags: ['语言', 'Web', '后端']
+  tagline: "饱受诟病？那又怎样！我依然能大放异彩！✨"
+  description: >
+    她虽然饱受诟病，但不得不承认，在一些“绝活哥/姐”手里，她能大放异彩。
+    
+    虽然绝大多数时候都是被迫应付古早项目罢了。
+  imageUrl: '/LangGalMemes/characters/php_tan/cover.png'
+  color: '#8892BF'
+  emojiPacks:
+    - name: '系列 0: 遗产'
+      path: '/LangGalMemes/characters/php_tan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
