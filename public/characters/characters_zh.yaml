@@ -339,7 +339,7 @@
     copyright: 'Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 16
-  name: 'iPhone二小姐'
+  name: 'iOS二小姐'
   techName: 'iOS'
   officialUrl: 'https://www.apple.com/ios/'
   tags: ['系统', '移动端', 'Apple']
@@ -387,7 +387,7 @@
     copyright: 'Character Design: POP / Smart PHONE Girl'
 
 - id: 18
-  name: 'MacOS大小姐'
+  name: 'macOS大小姐'
   techName: 'macOS'
   officialUrl: 'https://www.apple.com/macos/'
   tags: ['系统', '桌面端', 'Apple', '类Unix']

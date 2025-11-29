@@ -339,7 +339,7 @@
     copyright: 'Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 16
-  name: 'iPhone-chan'
+  name: 'iOS-chan'
   techName: 'iOS'
   officialUrl: 'https://www.apple.com/ios/'
   tags: ['OS', 'Mobile', 'Apple']
@@ -365,7 +365,7 @@
     copyright: 'Character Design: POP / Smart PHONE Girl'
 
 - id: 18
-  name: 'MacOS-tan'
+  name: 'macOS-tan'
   techName: 'macOS'
   officialUrl: 'https://www.apple.com/macos/'
   tags: ['OS', 'Desktop', 'Apple', 'Unix-like']
