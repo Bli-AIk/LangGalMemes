@@ -459,3 +459,25 @@
   credits:
     source: 'Original Character'
     copyright: 'Syntactic Sugar Copyright: JetBrains / AI Gen: Nano Banana Pro'
+
+- id: 22
+  name: 'Moka'
+  techName: 'Java'
+  officialUrl: 'https://www.java.com/'
+  tags: ['Language', 'Enterprise', 'JVM', 'Veteran']
+  tagline: "We don't use pointers here. And who is the backend queen? Me."
+  description: >
+    A veteran 'sensei' who maintains a youthful appearance (perhaps due to her massive student base). She loves to lecture on safety ("No pointers!"), her dominance in the enterprise backend, and how the best-selling game of all time runs on her. 
+    
+    She also holds a grudge against a certain scripting language for "stealing" her name.
+  imageUrl: '/LangGalMemes/characters/java_sensei/cover.png'
+  color: '#b07219'
+  emojiPacks:
+    - name: 'Series 0: Enterprise'
+      path: '/LangGalMemes/characters/java_sensei/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'

@@ -480,3 +480,25 @@
   credits:
     source: 'Original Character'
     copyright: 'Syntactic Sugar Copyright: JetBrains / AI Gen: Nano Banana Pro'
+
+- id: 22
+  name: '摩卡'
+  techName: 'Java'
+  officialUrl: 'https://www.java.com/'
+  tags: ['语言', '企业级', 'JVM', '元老']
+  tagline: "我们就是不用指针。后端首选是谁呀？"
+  description: >
+    一位资深的‘老师’，却保持着年轻的模样（也许是因为桃李满天下）。她总是喜欢把‘安全’（我们不用指针！）挂在嘴边，炫耀自己在企业后端的统治地位，或者提起那个销量第一的游戏是她的杰作。
+    
+    哦对了，她对隔壁某个蹭她名字的脚本语言至今耿耿于怀。
+  imageUrl: '/LangGalMemes/characters/java_sensei/cover.png'
+  color: '#b07219'
+  emojiPacks:
+    - name: '系列 0: 企业级'
+      path: '/LangGalMemes/characters/java_sensei/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
