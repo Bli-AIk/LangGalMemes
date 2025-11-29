@@ -109,11 +109,35 @@ const filteredMemes = computed(() => {
 
 const selectedMeme = ref<Meme | null>(null);
 
+const hexToHue = (hex: string): number => {
+  const r = parseInt(hex.slice(1, 3), 16) / 255;
+  const g = parseInt(hex.slice(3, 5), 16) / 255;
+  const b = parseInt(hex.slice(5, 7), 16) / 255;
+
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const d = max - min;
+
+  let h = 0;
+  if (d === 0) {
+    h = 0;
+  } else {
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return h;
+};
+
 const fetchMemes = async () => {
   loading.value = true;
   error.value = null;
   try {
-    memes.value = await loadMemes(locale.value);
+    const rawMemes = await loadMemes(locale.value);
+    memes.value = rawMemes.sort((a, b) => hexToHue(a.color) - hexToHue(b.color));
   } catch (err) {
     error.value = 'Failed to load characters data.';
     console.error(err);
