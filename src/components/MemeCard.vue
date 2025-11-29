@@ -65,7 +65,7 @@
         
         <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-3"></div>
 
-        <p class="text-sm text-slate-400 line-clamp-2 leading-relaxed font-light">
+        <p class="text-sm text-slate-400 line-clamp-2 leading-relaxed font-light whitespace-pre-wrap">
           {{ meme.description }}
         </p>
         

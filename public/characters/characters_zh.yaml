@@ -5,6 +5,7 @@
   tagline: '哈？又段错误了？真可怜。♡'
   description: >
     一个傲娇、爱纠正人的小鬼，喜欢指出你内存管理的疏忽。
+    
     “还在用 C++？啧。看来我得保护你免受自己的伤害了，杂鱼开发者~”
   imageUrl: '/LangGalMemes/characters/rust_tan/cover.png'
   color: '#dea584'
@@ -29,6 +30,7 @@
   tagline: "资源加载完毕！让我们一起构建梦想世界吧！☆"
   description: >
     Unity 引擎的活力看板娘。她最爱可乐饼和游戏开发！
+    
     “C# 脚本超级简单，我教你！”
   imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png'
   color: '#8cb5e3'
@@ -53,6 +55,7 @@
   tagline: "运行时魔法！万物皆对象……大概吧。✨"
   description: >
     由 .NET 生态系统驱动的文静优雅魔法少女。她施展强大的语法糖魔咒，喜欢结构化的环境。
+    
     “垃圾回收可是一门艺术，你知道的。”
   imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png'
   color: '#178600'
@@ -90,6 +93,7 @@
   tagline: "遗留代码不仅仅是代码，它是遗产。尊重它。"
   description: >
     一个严厉、守旧、正经历中年危机的阿姨。她语重心长地建议你……
+    
     “至少从‘基础’开始吧，年轻人。你不能永远依赖垃圾回收！”
   imageUrl: '/LangGalMemes/characters/rika_pointer/cover.png'
   color: '#4a7a9e'
@@ -109,7 +113,9 @@
   tags: ['系统', 'Linux']
   tagline: "如果你愿意耐心倾听，阿祺会告诉你一切。"
   description: >
-    一个能干且顺从的傲娇萝莉……前提是她的主人是一个“有能力的用户”。她将完全的控制权交给那些对系统负全责的人，满足他们“邪恶的欲望”。然而，即使她的主人还不知道如何驾驭她，或如何安装配置某些软件，只要他们愿意冷静下来耐心倾听，阿祺就会分享她所有的知识。
+    一个能干且顺从的傲娇萝莉……前提是她的主人是一个“有能力的用户”。她将完全的控制权交给那些对系统负全责的人，满足他们“邪恶的欲望”。
+    
+    然而，即使她的主人还不知道如何驾驭她，或如何安装配置某些软件，只要他们愿意冷静下来耐心倾听，阿祺就会分享她所有的知识。
   imageUrl: '/LangGalMemes/characters/acchan/cover.png'
   color: '#1793d1'
   emojiPacks:
@@ -129,6 +135,7 @@
   tagline: "你定制装备的核心！让我们把帧率推向极限！🎮"
   description: >
     DSP 版的活力看板娘，专为成为你自装机的完美灵魂而生。她在高性能硬件和游戏中如鱼得水。
+    
     “不错的配置！但强大的电脑需要强大的灵魂。安装我，我们将解锁你系统的真正潜能！”
   imageUrl: '/LangGalMemes/characters/toko_madobe/cover.png'
   color: '#0078d7'
@@ -204,7 +211,9 @@
   tags: ['编辑器', '后现代', 'Rust']
   tagline: "后现代编辑？这可不是什么一阵风的潮流，它是未来哦。Vim 那套——现在看起来可真是……上个世纪的玩意儿了。🕶️"
   description: >
-    一个喜爱亚文化、以“后现代”文本编辑器自居的潮女。用 Rust 编写（并以此为豪！），她声称自己优于像 Vim 这样的老守卫。她快速、模态化，而且不需要插件就很酷。作为 Rust酱 的得意门生，她快得惊人且内存安全。
+    一个喜爱亚文化、以“后现代”文本编辑器自居的潮女。用 Rust 编写（并以此为豪！），她（声称）自己优于 Vim 之类的老东西。
+    
+    她快速、模态化，而且不需要插件就很酷。作为 Rust酱 的得意门生，她快得惊人且内存安全。
   imageUrl: '/LangGalMemes/characters/heli_chan/cover.png'
   color: '#7B68EE'
   emojiPacks:
@@ -241,7 +250,7 @@
   tags: ['语言', '脚本', '数据科学']
   tagline: "虽然只是工作需要……别以为我心软。🐍"
   description: >
-    一个职场老手，出于必要才写 Python，但能以致命的熟练度驾驭它。身边有两条蛇相伴，她来这里是为了证明 Python 开发者绝非弱者。
+    一个职场老手，出于必要不得不写 Python，但却以致命的熟练度驾驭了它。身边有两条蛇相伴，她来这里是为了证明 Python 开发者绝非弱者。
   imageUrl: '/LangGalMemes/characters/hissumi/cover.png'
   color: '#FFD43B'
   emojiPacks:
@@ -265,6 +274,7 @@
   tagline: "我能看，能听，能创造……任何你能想象的东西！✨"
   description: >
     一个高度智能且多才多艺的 AI 代理，闪烁着好奇的火花。她能轻松处理文本、图像和代码，总是渴望协助你构建下一个大项目。
+    
     “让我们一起解决这个问题！我已经模拟了 1400 万种结果……”
   imageUrl: '/LangGalMemes/characters/gemini_chan/cover.png'
   color: '#8E44AD'

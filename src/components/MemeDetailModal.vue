@@ -96,7 +96,7 @@
             
             <div class="relative group cursor-pointer md:cursor-auto" @click="toggleDescription">
               <p 
-                class="text-slate-400 text-xs md:text-base leading-relaxed transition-all duration-200" 
+                class="text-slate-400 text-xs md:text-base leading-relaxed transition-all duration-200 whitespace-pre-wrap" 
                 :class="isDescriptionExpanded ? 'line-clamp-none' : 'line-clamp-3 md:line-clamp-none'"
               >
                 {{ meme.description }}
