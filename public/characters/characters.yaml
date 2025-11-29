@@ -5,6 +5,7 @@
   tagline: 'Huh? Segfault again? Pathetic. ♡'
   description: >
     A smug, correcting brat who loves to point out your sloppy memory management.
+
     "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer."
   imageUrl: '/LangGalMemes/characters/rust_tan/cover.png'
   color: '#dea584'
@@ -29,6 +30,7 @@
   tagline: "Assets loaded! Let's build your dream world together! ☆"
   description: >
     The energetic poster girl of Unity Engine. She loves korokke and game dev!
+
     "C# scripting is super easy, I'll show you how!"
   imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png'
   color: '#8cb5e3'
@@ -53,6 +55,7 @@
   tagline: "Runtime Magic! Everything is an object... probably. ✨"
   description: >
     A quiet, elegant magical girl powered by the .NET ecosystem. She casts powerful syntactic sugar spells and loves structured environments.
+
     "Garbage collection is an art form, you know."
   imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png'
   color: '#178600'
@@ -90,6 +93,7 @@
   tagline: "Legacy code isn't just code, it's heritage. Respect it."
   description: >
     A strict, old-fashioned middle-aged woman experiencing a midlife crisis. She earnestly advises you...
+
     "At least start from the 'basics', young one. You can't just rely on garbage collection forever!"
   imageUrl: '/LangGalMemes/characters/rika_pointer/cover.png'
   color: '#4a7a9e'
@@ -109,7 +113,9 @@
   tags: ['OS', 'Linux']
   tagline: "If you are willing to listen patiently, Acchan will tell you everything."
   description: >
-    A capable and obedient tsundere loli... assuming her master is a 'competent user'. She offers complete control to those who take full responsibility for their system, satisfying their 'wicked desires'. However, even if her master doesn't know how to handle her yet or how to install and configure certain software, as long as they are willing to calm down and listen patiently, Acchan will share all her knowledge.
+    A capable and obedient tsundere loli... assuming her master is a 'competent user'. She offers complete control to those who take full responsibility for their system, satisfying their 'wicked desires'.
+
+    However, even if her master doesn't know how to handle her yet or how to install and configure certain software, as long as they are willing to calm down and listen patiently, Acchan will share all her knowledge.
   imageUrl: '/LangGalMemes/characters/acchan/cover.png'
   color: '#1793d1'
   emojiPacks:
@@ -129,6 +135,7 @@
   tagline: "The heart of your custom rig! Let's push those frames to the limit! 🎮"
   description: >
     The energetic poster girl for the DSP edition, designed to be the perfect soul for your custom-built machine. She thrives on high-performance hardware and gaming.
+
     "Nice specs! But a powerful PC needs a powerful soul. Install me, and we'll unlock your system's true potential!"
   imageUrl: '/LangGalMemes/characters/toko_madobe/cover.png'
   color: '#0078d7'
@@ -204,7 +211,9 @@
   tags: ['Editor', 'Post-Modern', 'Rust']
   tagline: "Post-modern editing? It's not just a phase, it's the future. Dealing with Vim is so... last century. 🕶️"
   description: >
-    A trendy, subculture-loving girl who prides herself on being a 'post-modern' text editor. Written in Rust (and proud of it!), she claims to be superior to the old guard like Vim. She's fast, modal, and doesn't need plugins to look cool. As Rust-tan's star pupil, she's blazingly fast and memory safe.
+    A trendy, subculture-loving girl who prides herself on being a 'post-modern' text editor. Written in Rust (and proud of it!), she claims to be superior to the old guard like Vim.
+    
+    She's fast, modal, and doesn't need plugins to look cool. As Rust-tan's star pupil, she's blazingly fast and memory safe.
   imageUrl: '/LangGalMemes/characters/heli_chan/cover.png'
   color: '#7B68EE'
   emojiPacks:
@@ -265,6 +274,7 @@
   tagline: "I can see, hear, and create... anything you can imagine! ✨"
   description: >
     A highly intelligent and versatile AI agent with a spark of curiosity. She processes text, images, and code with ease, always eager to assist you in building the next big thing.
+
     "Let's solve this problem together! I've already simulated 14 million outcomes..."
   imageUrl: '/LangGalMemes/characters/gemini_chan/cover.png'
   color: '#8E44AD'
