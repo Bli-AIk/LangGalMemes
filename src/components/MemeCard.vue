@@ -53,7 +53,10 @@
       <div class="p-5 relative z-10 bg-slate-900/40 flex-grow flex flex-col justify-between border-t border-white/5 group-hover:bg-slate-900/60 transition-colors">
         <div>
           <div class="flex justify-between items-start">
-            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors tracking-tight font-heading">
+            <h3 
+              class="text-xl font-bold text-white mb-1 transition-colors duration-300 tracking-tight font-heading"
+              :style="{ color: isHovering ? titleHoverColor : '' }"
+            >
               {{ meme.name }}
             </h3>
             <div class="h-2 w-2 rounded-full animate-pulse" :style="{ backgroundColor: meme.color }"></div>
@@ -105,7 +108,7 @@ import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
-defineProps<{
+const props = defineProps<{
   meme: Meme;
 }>();
 
@@ -134,6 +137,43 @@ const handleMouseLeave = () => {
   mouseX.value = 0.5;
   mouseY.value = 0.5;
 };
+
+const getHoverColor = (hex: string) => {
+  // Remove # if present
+  hex = hex.replace(/^#/, '');
+
+  // Parse RGB
+  let r = parseInt(hex.substring(0, 2), 16) / 255;
+  let g = parseInt(hex.substring(2, 4), 16) / 255;
+  let b = parseInt(hex.substring(4, 6), 16) / 255;
+
+  // RGB to HSL
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  let h = 0, s = 0, l = (max + min) / 2;
+
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+
+  // Adjustments (微调 HSV)
+  // Increase Saturation to make it pop
+  s = Math.min(s + 0.2, 1); 
+  // Ensure Lightness is high enough to be readable on dark bg
+  l = Math.max(l, 0.7); // Min 70% lightness
+  l = Math.min(l + 0.1, 0.95); // Add brightness, cap at 95%
+
+  return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+};
+
+const titleHoverColor = computed(() => getHoverColor(props.meme.color));
 
 const cardStyle = computed(() => {
   if (!isHovering.value) {
