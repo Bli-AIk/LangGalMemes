@@ -363,3 +363,25 @@
     source: 'Smart PHONE Girl by POP'
     url: 'http://smartphonegirl.jp/'
     copyright: 'Character Design: POP / Smart PHONE Girl'
+
+- id: 17
+  name: 'Windows Phone-chan'
+  techName: 'Windows Phone'
+  officialUrl: 'https://en.wikipedia.org/wiki/Windows_Phone'
+  tags: ['OS', 'Mobile', 'Microsoft', 'Retro']
+  tagline: "I... I'm still unique, right? Look at my beautiful tiles! "
+  description: >
+    A bright, colorful girl who arrived late to the smartphone party. She brought a revolutionary "Metro" style—flat, fast, and fluid—but found herself alone in a room full of people ignoring her.
+
+    Despite her innovative interface and smooth performance, she struggled to make friends (apps). She eventually "retired" young, smiling through the tears as she faded away, leaving behind a small but loyal cult following who still cherish her memory.
+  imageUrl: '/LangGalMemes/characters/windows_phone_chan/cover.png'
+  color: '#a4ce47'
+  emojiPacks:
+    - name: 'Series 0: Metro UI'
+      path: '/LangGalMemes/characters/windows_phone_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 28]
+  credits:
+    source: 'Smart PHONE Girl by POP'
+    url: 'http://smartphonegirl.jp/'
+    copyright: 'Character Design: POP / Smart PHONE Girl'
