@@ -369,13 +369,13 @@
   techName: 'Windows Phone'
   officialUrl: 'https://en.wikipedia.org/wiki/Windows_Phone'
   tags: ['系统', '移动端', 'Microsoft', '怀旧']
-  tagline: "我……我还是很特别的对吧？看看我的动态磁贴多漂亮！⬜"
+  tagline: "我……我还是很特别的对吧？看看我的动态磁贴多漂亮！"
   description: >
     一个色彩斑斓、风格独特的女孩，姗姗来迟地加入了智能手机的派对。她带来了革命性的“Metro”风格——扁平、快速、流畅——却发现自己在满是人群的房间里孤身一人。
 
     尽管她拥有创新的界面和丝滑的性能，却很难交到朋友（应用）。她最终英年早逝，在消逝时依然强颜欢笑，只留下一小群至今仍珍视这份记忆的忠实信徒。
   imageUrl: '/LangGalMemes/characters/windows_phone_chan/cover.png'
-  color: '#00ADEF'
+  color: '#a4ce47'
   emojiPacks:
     - name: '系列 0: Metro UI'
       path: '/LangGalMemes/characters/windows_phone_chan/series_0'
