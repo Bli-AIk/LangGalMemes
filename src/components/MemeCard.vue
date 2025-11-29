@@ -78,7 +78,7 @@
         
         <!-- Credits -->
         <div class="mt-3 pt-2 border-t border-white/5 text-[10px] text-slate-600 truncate group-hover:text-slate-500 transition-colors" :title="meme.credits.copyright">
-          <span class="mr-1">Source:</span>
+          <span class="mr-1">{{ t('card.source') }}</span>
           <a 
             v-if="meme.credits.url" 
             :href="meme.credits.url" 
@@ -101,6 +101,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import type { Meme } from '../data/memes';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 defineProps<{
   meme: Meme;

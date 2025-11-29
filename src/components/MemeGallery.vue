@@ -2,7 +2,7 @@
   <section id="gallery" class="py-16 px-4 max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row items-center justify-between mb-10 gap-4">
       <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight self-start md:self-auto">
-        <span class="text-accent">#</span> Collection
+        <span class="text-accent">#</span> {{ t('gallery.collection') }}
       </h2>
       
       <!-- Filter Tabs -->
@@ -14,7 +14,7 @@
           class="px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 relative overflow-hidden"
           :class="activeTab === tab ? 'text-white bg-slate-700 shadow-md' : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'"
         >
-          {{ tab }}
+          {{ t('categories.' + tab.toLowerCase()) }}
           <!-- Active Indicator -->
           <span v-if="activeTab === tab" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary mb-0.5"></span>
         </button>
@@ -24,12 +24,13 @@
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center items-center py-32">
       <div class="animate-spin rounded-full h-12 w-12 border-4 border-slate-700 border-t-primary"></div>
+      <span class="ml-3 text-slate-400 animate-pulse">{{ t('gallery.loading') }}</span>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="text-center py-20">
       <p class="text-red-400 text-lg font-mono">{{ error }}</p>
-      <button @click="fetchMemes" class="mt-4 px-4 py-2 bg-slate-800 rounded text-white hover:bg-slate-700">Retry</button>
+      <button @click="fetchMemes" class="mt-4 px-4 py-2 bg-slate-800 rounded text-white hover:bg-slate-700">{{ t('gallery.retry') }}</button>
     </div>
 
     <!-- Grid -->
@@ -51,7 +52,7 @@
 
     <!-- Empty State -->
     <div v-if="!loading && !error && filteredMemes.length === 0" class="text-center py-20">
-      <p class="text-slate-500 text-lg font-mono">No characters found in this category.</p>
+      <p class="text-slate-500 text-lg font-mono">{{ t('gallery.empty') }}</p>
     </div>
 
     <!-- Detail Modal -->
@@ -75,10 +76,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { loadMemes, type Meme } from '../data/memes';
 import MemeCard from './MemeCard.vue';
 import MemeDetailModal from './MemeDetailModal.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
 
 const categories = ['All', 'Language', 'Engine', 'Editor', 'OS', 'Utils'];
 const activeTab = ref('All');
@@ -93,12 +97,14 @@ const filteredMemes = computed(() => {
   
   if (activeTab.value === 'Utils') {
     const mainCategories = ['Language', 'Engine', 'Editor', 'OS'];
+    const mainCategoriesTags = mainCategories.map(cat => t(`categories.${cat.toLowerCase()}`));
     return memes.value.filter(meme => 
-      !meme.tags.some(tag => mainCategories.includes(tag))
+      !meme.tags.some(tag => mainCategoriesTags.includes(tag))
     );
   }
 
-  return memes.value.filter(meme => meme.tags.includes(activeTab.value));
+  const currentTag = t(`categories.${activeTab.value.toLowerCase()}`);
+  return memes.value.filter(meme => meme.tags.includes(currentTag));
 });
 
 const selectedMeme = ref<Meme | null>(null);
@@ -107,7 +113,7 @@ const fetchMemes = async () => {
   loading.value = true;
   error.value = null;
   try {
-    memes.value = await loadMemes();
+    memes.value = await loadMemes(locale.value);
   } catch (err) {
     error.value = 'Failed to load characters data.';
     console.error(err);
@@ -115,6 +121,10 @@ const fetchMemes = async () => {
     loading.value = false;
   }
 };
+
+watch(locale, () => {
+  fetchMemes();
+});
 
 onMounted(() => {
   fetchMemes();

@@ -40,11 +40,19 @@ interface YamlMeme extends Omit<Meme, 'emojiPacks'> {
   emojiPacks: YamlEmojiPack[];
 }
 
-export const loadMemes = async (): Promise<Meme[]> => {
+export const loadMemes = async (locale: string = 'en'): Promise<Meme[]> => {
   try {
-    // Adjust the path if your base URL is different
-    const response = await fetch('/LangGalMemes/characters/characters.yaml');
+    // Adjust filename based on locale
+    // We assume 'characters.yaml' is the default (English) and 'characters_zh.yaml' is for Chinese
+    const filename = locale.toLowerCase().startsWith('zh') ? 'characters_zh.yaml' : 'characters.yaml';
+    
+    const response = await fetch(`/LangGalMemes/characters/${filename}`);
     if (!response.ok) {
+      // Fallback to default if localized file not found (e.g. if only zh is missing)
+      if (filename !== 'characters.yaml') {
+        console.warn(`Failed to load ${filename}, falling back to default.`);
+        return loadMemes('en');
+      }
       throw new Error(`Failed to load config: ${response.statusText}`);
     }
     const yamlText = await response.text();

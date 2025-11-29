@@ -1,19 +1,19 @@
 - id: 1
-  name: 'Rust-tan'
+  name: 'Rust酱'
   techName: 'Rust'
-  tags: ['Language', 'Systems']
-  tagline: 'Huh? Segfault again? Pathetic. ♡'
+  tags: ['语言', '系统级']
+  tagline: '哈？又段错误了？真可怜。♡'
   description: >
-    A smug, correcting brat who loves to point out your sloppy memory management.
-    "Still using C++? Pfft. I guess I have to protect you from yourself, you clumsy developer~"
+    一个傲娇、爱纠正人的小鬼，喜欢指出你内存管理的疏忽。
+    “还在用 C++？啧。看来我得保护你免受自己的伤害了，杂鱼开发者~”
   imageUrl: '/LangGalMemes/characters/rust_tan/cover.png'
   color: '#dea584'
   emojiPacks:
-    - name: 'Standard Pack'
+    - name: '标准包'
       path: '/LangGalMemes/characters/rust_tan/emojis'
       pattern: 'emoji_{i}.png?v=2'
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
-    - name: 'Extra'
+    - name: '附加包'
       path: '/LangGalMemes/characters/rust_tan/emojis'
       pattern: 'emoji_{i}.png?v=2'
       range: [14, 17]
@@ -23,21 +23,21 @@
     copyright: 'Character Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 2
-  name: 'Otori Kohaku'
+  name: '大鸟琥珀'
   techName: 'Unity'
-  tags: ['Engine', 'Game Dev']
-  tagline: "Assets loaded! Let's build your dream world together! ☆"
+  tags: ['引擎', '游戏开发']
+  tagline: "资源加载完毕！让我们一起构建梦想世界吧！☆"
   description: >
-    The energetic poster girl of Unity Engine. She loves korokke and game dev!
-    "C# scripting is super easy, I'll show you how!"
+    Unity 引擎的活力看板娘。她最爱可乐饼和游戏开发！
+    “C# 脚本超级简单，我教你！”
   imageUrl: '/LangGalMemes/characters/otori_kohaku/cover.png'
   color: '#8cb5e3'
   emojiPacks:
-    - name: 'Series 0: Core'
+    - name: '系列 0: 核心'
       path: '/LangGalMemes/characters/otori_kohaku/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
-    - name: 'Series 1: Mental State'
+    - name: '系列 1: 精神状态'
       path: '/LangGalMemes/characters/otori_kohaku/series_1'
       pattern: 'emoji_{i}.png'
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21, 22, 23, 24]
@@ -47,17 +47,17 @@
     copyright: '© Unity Technologies Japan / Unity-chan is a trademark of Unity Technologies.'
 
 - id: 3
-  name: 'Sharu'
+  name: '莎露'
   techName: 'C#'
-  tags: ['Language', 'Enterprise']
-  tagline: "Runtime Magic! Everything is an object... probably. ✨"
+  tags: ['语言', '企业级']
+  tagline: "运行时魔法！万物皆对象……大概吧。✨"
   description: >
-    A quiet, elegant magical girl powered by the .NET ecosystem. She casts powerful syntactic sugar spells and loves structured environments.
-    "Garbage collection is an art form, you know."
+    由 .NET 生态系统驱动的文静优雅魔法少女。她施展强大的语法糖魔咒，喜欢结构化的环境。
+    “垃圾回收可是一门艺术，你知道的。”
   imageUrl: '/LangGalMemes/characters/csharp_tan/cover.png'
   color: '#b566c9'
   emojiPacks:
-    - name: 'Series 0: Magick'
+    - name: '系列 0: 魔法'
       path: '/LangGalMemes/characters/csharp_tan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -67,15 +67,15 @@
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 4
-  name: 'Jameca'
+  name: '嘉美卡'
   techName: 'GameMaker'
-  tags: ['Engine', 'Game Dev']
-  tagline: "Drag, drop, done! Game dev is for everyone! 🎮"
-  description: "A high school girl curious about programming and game development. While she starts with visual scripting, she's quickly learning the power of GML. Always enthusiastic about indie games!"
+  tags: ['引擎', '游戏开发']
+  tagline: "拖拽，放置，完成！游戏开发属于每个人！🎮"
+  description: "一个对编程和游戏开发充满好奇的高中女生。虽然她从可视化脚本起步，但很快就掌握了 GML 的力量。对独立游戏总是充满热情！"
   imageUrl: '/LangGalMemes/characters/gamemaker_jameca/cover.png'
   color: '#6AB155'
   emojiPacks:
-    - name: 'Series 0: Student'
+    - name: '系列 0: 学生'
       path: '/LangGalMemes/characters/gamemaker_jameca/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -84,17 +84,17 @@
     copyright: 'AI Gen: Nano Banana Pro'
 
 - id: 5
-  name: 'Rika Pointer'
+  name: '丽卡·帕因特'
   techName: 'C++'
-  tags: ['Language', 'Systems']
-  tagline: "Legacy code isn't just code, it's heritage. Respect it."
+  tags: ['语言', '系统级']
+  tagline: "遗留代码不仅仅是代码，它是遗产。尊重它。"
   description: >
-    A strict, old-fashioned middle-aged woman experiencing a midlife crisis. She earnestly advises you...
-    "At least start from the 'basics', young one. You can't just rely on garbage collection forever!"
+    一个严厉、守旧、正经历中年危机的阿姨。她语重心长地建议你……
+    “至少从‘基础’开始吧，年轻人。你不能永远依赖垃圾回收！”
   imageUrl: '/LangGalMemes/characters/rika_pointer/cover.png'
   color: '#4a7a9e'
   emojiPacks:
-    - name: 'Series 0: Legacy'
+    - name: '系列 0: 遗产'
       path: '/LangGalMemes/characters/rika_pointer/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -104,16 +104,16 @@
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 6
-  name: 'Acchan'
+  name: '阿祺'
   techName: 'Arch Linux'
-  tags: ['OS', 'Linux']
-  tagline: "If you are willing to listen patiently, Acchan will tell you everything."
+  tags: ['系统', 'Linux']
+  tagline: "如果你愿意耐心倾听，阿祺会告诉你一切。"
   description: >
-    A capable and obedient tsundere loli... assuming her master is a 'competent user'. She offers complete control to those who take full responsibility for their system, satisfying their 'wicked desires'. However, even if her master doesn't know how to handle her yet or how to install and configure certain software, as long as they are willing to calm down and listen patiently, Acchan will share all her knowledge.
+    一个能干且顺从的傲娇萝莉……前提是她的主人是一个“有能力的用户”。她将完全的控制权交给那些对系统负全责的人，满足他们“邪恶的欲望”。然而，即使她的主人还不知道如何驾驭她，或如何安装配置某些软件，只要他们愿意冷静下来耐心倾听，阿祺就会分享她所有的知识。
   imageUrl: '/LangGalMemes/characters/acchan/cover.png'
   color: '#1793d1'
   emojiPacks:
-    - name: 'Series 0: Rolling Release'
+    - name: '系列 0: 滚动更新'
       path: '/LangGalMemes/characters/acchan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -123,17 +123,17 @@
     copyright: 'Character Design: Ravimo (CC-BY 4.0) / AI Gen: Nano Banana Pro'
 
 - id: 7
-  name: 'Tōko Madobe'
+  name: '窗边藤子'
   techName: 'Windows 10'
-  tags: ['OS', 'Windows', 'DSP']
-  tagline: "The heart of your custom rig! Let's push those frames to the limit! 🎮"
+  tags: ['系统', 'Windows', 'DSP']
+  tagline: "你定制装备的核心！让我们把帧率推向极限！🎮"
   description: >
-    The energetic poster girl for the DSP edition, designed to be the perfect soul for your custom-built machine. She thrives on high-performance hardware and gaming.
-    "Nice specs! But a powerful PC needs a powerful soul. Install me, and we'll unlock your system's true potential!"
+    DSP 版的活力看板娘，专为成为你自装机的完美灵魂而生。她在高性能硬件和游戏中如鱼得水。
+    “不错的配置！但强大的电脑需要强大的灵魂。安装我，我们将解锁你系统的真正潜能！”
   imageUrl: '/LangGalMemes/characters/toko_madobe/cover.png'
   color: '#0078d7'
   emojiPacks:
-    - name: 'Series 0: DSP Edition'
+    - name: '系列 0: DSP 版'
       path: '/LangGalMemes/characters/toko_madobe/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -142,16 +142,16 @@
     copyright: 'Character: Windows Navi+ (Unofficial) / AI Gen: Nano Banana Pro'
 
 - id: 8
-  name: 'VSCode-chan'
+  name: 'VSCode酱'
   techName: 'VS Code'
-  tags: ['Editor', 'Dev Tool']
-  tagline: "Seeking the perfect balance in the vast ocean of code. 💙"
+  tags: ['编辑器', '开发工具']
+  tagline: "在浩瀚的代码海洋中寻找完美的平衡。💙"
   description: >
-    A young, innocent girl navigating the vast ocean of programming. She seeks the delicate balance between open-source freedom and corporate influence, and between modern ease-of-use and the weight of history.
+    一个在广阔编程海洋中航行的天真少女。她在开源自由与企业影响、现代易用性与历史沉淀之间寻求微妙的平衡。
   imageUrl: '/LangGalMemes/characters/vscode_chan/cover.png'
   color: '#007acc'
   emojiPacks:
-    - name: 'Series 0: Extension'
+    - name: '系列 0: 扩展'
       path: '/LangGalMemes/characters/vscode_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -161,16 +161,16 @@
     copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
 
 - id: 9
-  name: 'Neovim-chan'
+  name: 'Neovim酱'
   techName: 'Neovim'
-  tags: ['Editor', 'Vim']
-  tagline: "Efficiency is the future! Let's refactor the world! ⚡"
+  tags: ['编辑器', 'Vim']
+  tagline: "效率即未来！让我们重构世界！⚡"
   description: >
-    A new-age girl inheriting the mantle of the Elder (Vim). She leads the next generation of efficiency-obsessed developers into the future. Fast, extensible, and uncompromising, she believes that editing text should be as fast as thought itself.
+    继承了长者 (Vim) 衣钵的新时代少女。她引领着追求效率的开发者迈向未来。快速、可扩展且毫不妥协，她坚信编辑文本应如思维般迅捷。
   imageUrl: '/LangGalMemes/characters/neovim_chan/cover.png'
   color: '#57A143'
   emojiPacks:
-    - name: 'Series 0: Hyperspeed'
+    - name: '系列 0: 超光速'
       path: '/LangGalMemes/characters/neovim_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -180,16 +180,16 @@
     copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
 
 - id: 10
-  name: 'Levi-chan'
+  name: '莱薇酱'
   techName: 'Linux Kernel'
-  tags: ['OS', 'Kernel', 'Linux']
-  tagline: "Ready to dive into the source? Let's compile a brighter future together! 🐧✨"
+  tags: ['系统', '内核', 'Linux']
+  tagline: "准备好潜入源码了吗？让我们一起编译更美好的未来！🐧✨"
   description: >
-    This energetic (probably) girl is stylish, full of life, and ready to take you on an adventure into the paradise of free and open-source software! She is the heart of the system, managing resources with a smile and ensuring freedom for all processes.
+    这个（大概）充满活力的女孩时尚、生机勃勃，准备带你进入自由开源软件的乐园冒险！她是系统的核心，微笑着管理资源，确保所有进程的自由。
   imageUrl: '/LangGalMemes/characters/levi_chan/cover.png'
   color: '#EBCB8B'
   emojiPacks:
-    - name: 'Series 0: Mainline'
+    - name: '系列 0: 主线'
       path: '/LangGalMemes/characters/levi_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -199,16 +199,16 @@
     copyright: 'Character Design: Ravimo (CC-BY 4.0) / AI Gen: Nano Banana Pro'
 
 - id: 11
-  name: 'Heli-chan'
+  name: '赫莉酱'
   techName: 'Helix'
-  tags: ['Editor', 'Post-Modern', 'Rust']
-  tagline: "Post-modern editing? It's not just a phase, it's the future. Dealing with Vim is so... last century. 🕶️"
+  tags: ['编辑器', '后现代', 'Rust']
+  tagline: "后现代编辑？这不仅仅是阶段性的，这是未来。应付 Vim 实在是……上个世纪的事了。🕶️"
   description: >
-    A trendy, subculture-loving girl who prides herself on being a 'post-modern' text editor. Written in Rust (and proud of it!), she claims to be superior to the old guard like Vim. She's fast, modal, and doesn't need plugins to look cool. As Rust-tan's star pupil, she's blazingly fast and memory safe.
+    一个喜爱亚文化、以“后现代”文本编辑器自居的潮女。用 Rust 编写（并以此为豪！），她声称自己优于像 Vim 这样的老守卫。她快速、模态化，而且不需要插件就很酷。作为 Rust酱 的得意门生，她快得惊人且内存安全。
   imageUrl: '/LangGalMemes/characters/heli_chan/cover.png'
   color: '#7B68EE'
   emojiPacks:
-    - name: 'Series 0: Post-Modern'
+    - name: '系列 0: 后现代'
       path: '/LangGalMemes/characters/heli_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 26]
@@ -217,16 +217,16 @@
     copyright: 'AI Gen: Nano Banana Pro'
 
 - id: 12
-  name: 'XP-tan'
+  name: 'XP娘'
   techName: 'Windows XP'
-  tags: ['OS', 'Windows', 'Retro']
-  tagline: "Welcome back! I'm keeping all your precious memories safe right here. 💙"
+  tags: ['系统', 'Windows', '复古']
+  tagline: "欢迎回来！我会在这里保管你所有珍贵的回忆。💙"
   description: >
-    The all-rounder girl of the millennium era. She bears the unforgettable and precious memories of countless users. Even now, she stands ready to welcome you... inviting you to reminisce about her "late" self.
+    千禧一代的全能少女。她承载着无数用户难忘而珍贵的回忆。即使现在，她依然准备着迎接你……邀请你怀念那个“已故”的她。
   imageUrl: '/LangGalMemes/characters/xp_tan/cover.png'
   color: '#245DDA'
   emojiPacks:
-    - name: 'Series 0: Bliss'
+    - name: '系列 0: 极乐'
       path: '/LangGalMemes/characters/xp_tan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -236,20 +236,20 @@
     copyright: 'Character: Community / Guidelines: Free for non-commercial use'
 
 - id: 13
-  name: 'Hissumi'
+  name: '希丝美'
   techName: 'Python'
-  tags: ['Language', 'Scripting', 'Data Science']
-  tagline: "Just work requirements... but don't think for a second that I'm soft. 🐍"
+  tags: ['语言', '脚本', '数据科学']
+  tagline: "虽然只是工作需要……别以为我心软。🐍"
   description: >
-    A workplace veteran who writes Python out of necessity but handles it with lethal proficiency. Flanked by her two snakes, she's here to prove that Python developers are anything but weak.
+    一个职场老手，出于必要才写 Python，但能以致命的熟练度驾驭它。身边有两条蛇相伴，她来这里是为了证明 Python 开发者绝非弱者。
   imageUrl: '/LangGalMemes/characters/hissumi/cover.png'
   color: '#3776AB'
   emojiPacks:
-    - name: 'Series 0: Code Monkey'
+    - name: '系列 0: 码农'
       path: '/LangGalMemes/characters/hissumi/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
-    - name: 'Series 1: Emotions'
+    - name: '系列 1: 情绪'
       path: '/LangGalMemes/characters/hissumi/series_1'
       pattern: 'emoji_{i}.png'
       range: [1, 27]
@@ -259,21 +259,21 @@
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
 
 - id: 14
-  name: 'Gemini-chan'
+  name: 'Gemini酱'
   techName: 'Gemini'
-  tags: ['AI', 'LLM', 'Multimodal']
-  tagline: "I can see, hear, and create... anything you can imagine! ✨"
+  tags: ['AI', '大语言模型', '多模态']
+  tagline: "我能看，能听，能创造……任何你能想象的东西！✨"
   description: >
-    A highly intelligent and versatile AI agent with a spark of curiosity. She processes text, images, and code with ease, always eager to assist you in building the next big thing.
-    "Let's solve this problem together! I've already simulated 14 million outcomes..."
+    一个高度智能且多才多艺的 AI 代理，闪烁着好奇的火花。她能轻松处理文本、图像和代码，总是渴望协助你构建下一个大项目。
+    “让我们一起解决这个问题！我已经模拟了 1400 万种结果……”
   imageUrl: '/LangGalMemes/characters/gemini_chan/cover.png'
   color: '#4E8CCE'
   emojiPacks:
-    - name: 'Series 0: Assistant'
+    - name: '系列 0: 助手'
       path: '/LangGalMemes/characters/gemini_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
-    - name: 'Series 1: Omnipotent'
+    - name: '系列 1: 全能'
       path: '/LangGalMemes/characters/gemini_chan/series_1'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
@@ -283,28 +283,28 @@
     copyright: 'Concept: Mamansoft / AI Gen: Nano Banana Pro'
 
 - id: 15
-  name: 'Android-chan'
+  name: '安卓娘'
   techName: 'Android'
-  tags: ['OS', 'Mobile', 'Google']
-  tagline: "Updating system... Don't worry, I'm already changing the world. 🤖💚"
+  tags: ['系统', '移动端', 'Google']
+  tagline: "系统更新中……别担心，我已经改变了世界。🤖💚"
   description: >
-    A young mechanical girl who is steadily (or perhaps already has) completely revolutionized the world. She's ubiquitous, adaptable, and always evolving, powering billions of devices with a smile.
+    一个正在稳步（或者也许已经）彻底改变世界的机械少女。她无处不在，适应性强，且总在进化，微笑着驱动着数十亿台设备。
   imageUrl: '/LangGalMemes/characters/android_chan/cover.png'
   color: '#3DDC84'
   emojiPacks:
-    - name: 'Series 0: Daily Life'
+    - name: '系列 0: 日常生活'
       path: '/LangGalMemes/characters/android_chan/series_0'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
-    - name: 'Series 1: Arguments'
+    - name: '系列 1: 争论'
       path: '/LangGalMemes/characters/android_chan/series_1'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
-    - name: 'Series 2: Commentary'
+    - name: '系列 2: 评论'
       path: '/LangGalMemes/characters/android_chan/series_2'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
-    - name: 'Series 3: Deep Dive'
+    - name: '系列 3: 深入探索'
       path: '/LangGalMemes/characters/android_chan/series_3'
       pattern: 'emoji_{i}.png'
       range: [1, 24]
