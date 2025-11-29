@@ -409,3 +409,31 @@
     source: 'OS-tan Collections'
     url: 'https://www.ostan-collections.net/wiki/index.php/Mac-tan'
     copyright: 'Character: Community / Guidelines: Free for non-commercial use'
+
+- id: 19
+  name: '塞西莉亚'
+  techName: 'C'
+  officialUrl: 'https://en.wikipedia.org/wiki/C_(programming_language)'
+  tags: ['语言', '系统级', '底层', '元老']
+  tagline: "别再用那些面向对象语言啦，Program in C!"
+  description: >
+    一位神秘而睿智的编程界老妇人，经历了数十年的风风雨雨，依然宝刀不老。面对层出不穷的新语言，她不屑一顾，坚信直接、纯粹的底层操控才是编程的真谛。
+  imageUrl: '/LangGalMemes/characters/c_lang_tan/cover.png'
+  color: '#CCCCCC'
+  emojiPacks:
+    - name: '系列 0: std包'
+      path: '/LangGalMemes/characters/c_lang_tan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: '系列 1: Program in C'
+      path: '/LangGalMemes/characters/c_lang_tan/series_1'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+    - name: '系列 2: Program in C (汉化)'
+      path: '/LangGalMemes/characters/c_lang_tan/series_2'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
