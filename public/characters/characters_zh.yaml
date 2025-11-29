@@ -469,7 +469,7 @@
   description: >
     年轻至极，活力四射，火力全开，准备带你进入 Java 生态密林！
     
-    “别急，我先抄点语法糖（”
+    “别急，先抄点语法糖版权信息写OC。”
   imageUrl: '/LangGalMemes/characters/kotlin_chan/cover.png'
   color: '#7F52FF'
   emojiPacks:
@@ -502,3 +502,26 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 23
+  name: '瓦茜'
+  techName: 'WebAssembly'
+  officialUrl: 'https://webassembly.org/'
+  tags: ['Web', '二进制', '高性能']
+  tagline: "高效执行中。不允许运行时错误。⚡"
+  description: >
+    她表面上冷静、理性、效率至上，瓦茜说话简洁，语气甚至带点机械感。
+    
+    但在冷酷的外表下，她对新事物充满好奇，极其享受“编译成功”带来的成就感。令人意外的是，她对“脆弱的旧系统”反而有着温柔和耐心的一面。
+    
+    她礼貌而直接，偶尔会开一些技术隐喻的玩笑（比如把尴尬时刻称为“运行时错误”）。
+  imageUrl: '/LangGalMemes/characters/wasi_chan/cover.png'
+  color: '#654FF0'
+  emojiPacks:
+    - name: '系列 0: 汇编'
+      path: '/LangGalMemes/characters/wasi_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'

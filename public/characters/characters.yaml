@@ -364,6 +364,28 @@
     url: 'http://smartphonegirl.jp/'
     copyright: 'Character Design: POP / Smart PHONE Girl'
 
+- id: 17
+  name: 'Windows Phone娘'
+  techName: 'Windows Phone'
+  officialUrl: 'https://en.wikipedia.org/wiki/Windows_Phone'
+  tags: ['System', 'Mobile', 'Microsoft', 'Retro']
+  tagline: "I... I'm still special, right? Look how beautiful my Live Tiles are!"
+  description: >
+    A colorful, uniquely styled girl who arrived late to the smartphone party. She brought a revolutionary "Metro" style—flat, fast, fluid—only to find herself alone in a crowded room.
+    
+    Despite her innovative interface and buttery smooth performance, she struggled to make friends (apps). She eventually passed away young, still smiling bravely as she faded, leaving behind a small cult of followers who cherish her memory to this day.
+  imageUrl: '/LangGalMemes/characters/windows_phone_chan/cover.png'
+  color: '#a4ce47'
+  emojiPacks:
+    - name: 'Series 0: Metro UI'
+      path: '/LangGalMemes/characters/windows_phone_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 28]
+  credits:
+    source: 'Smart PHONE Girl by POP'
+    url: 'http://smartphonegirl.jp/'
+    copyright: 'Character Design: POP / Smart PHONE Girl'
+
 - id: 18
   name: 'macOS-tan'
   techName: 'macOS'
@@ -415,7 +437,6 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
-
 
 - id: 20
   name: 'Elphie'
@@ -481,3 +502,26 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 23
+  name: 'Wasi'
+  techName: 'WebAssembly'
+  officialUrl: 'https://webassembly.org/'
+  tags: ['Web', 'Binary', 'Performance']
+  tagline: "Executing efficiently. No runtime errors allowed. ⚡"
+  description: >
+    Calm, rational, and efficiency-oriented, Wasi speaks concisely with a slight mechanical tone.
+    
+    Beneath her cool exterior, she's curious about new things and loves the feeling of "compilation success." She is surprisingly gentle and patient with "fragile old systems."
+    
+    She's polite but direct, and occasionally jokes using tech metaphors (like calling awkward moments "runtime errors").
+  imageUrl: '/LangGalMemes/characters/wasi_chan/cover.png'
+  color: '#654FF0'
+  emojiPacks:
+    - name: 'Series 0: Assembly'
+      path: '/LangGalMemes/characters/wasi_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'AI Gen: Nano Banana Pro'
