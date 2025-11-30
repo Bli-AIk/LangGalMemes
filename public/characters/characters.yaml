@@ -548,3 +548,25 @@
   credits:
     source: 'Original Character'
     copyright: 'AI Gen: Nano Banana Pro'
+
+- id: 25
+  name: 'Jessie'
+  techName: 'JavaScript'
+  officialUrl: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+  tags: ['Language', 'Web', 'Frontend', 'Scripting']
+  tagline: "I'm not Java! But I can run anywhere... even in your toaster. 😜"
+  description: >
+    A cheeky tomboy who acts serious but loves chaos. She renamed herself to piggyback on Java's fame but has since taken over the world. 
+    
+    She loves to play pranks (type coercion, anyone?) and watch developers struggle, all while keeping a straight face.
+  imageUrl: '/LangGalMemes/characters/js_chan/cover.png'
+  color: '#F7DF1E'
+  emojiPacks:
+    - name: 'Series 0: Prototype'
+      path: '/LangGalMemes/characters/js_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'

@@ -550,3 +550,25 @@
   credits:
     source: 'Original Character'
     copyright: 'AI Gen: Nano Banana Pro'
+
+- id: 25
+  name: '杰西'
+  techName: 'JavaScript'
+  officialUrl: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript'
+  tags: ['语言', 'Web', '前端', '脚本']
+  tagline: "我才不是 Java 呢！但我可以在任何地方运行……甚至你的烤面包机里。😜"
+  description: >
+    一个混球假小子，干啥都不正经，但总要让别人跟着她一起折腾。
+    
+    明明自己叫 LiveScript 却不用这个名字，硬是抄别人家的 Java 名字当自己名字。喜欢耍小聪明，也喜欢看到别人被她搞得手忙脚乱，但表面上永远一本正经。
+  imageUrl: '/LangGalMemes/characters/js_chan/cover.png'
+  color: '#F7DF1E'
+  emojiPacks:
+    - name: '系列 0: 原型'
+      path: '/LangGalMemes/characters/js_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Design inspired by r/MoeMorphism'
+    url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
