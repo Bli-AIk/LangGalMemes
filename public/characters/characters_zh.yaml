@@ -572,3 +572,24 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 26
+  name: '泰莎'
+  techName: 'TypeScript'
+  officialUrl: 'https://www.typescriptlang.org/zh/'
+  tags: ['语言', 'Web', '类型化', '微软']
+  tagline: "结构并非束缚，而是解放。📘"
+  description: >
+    一位端庄的学院派淑女，也是那个混球杰西的“监护人”。她与远方的魔法少女莎露（C#）有着共同的血脉，致力于为 Web 世界带来秩序。
+
+    她总是跟在杰西身后，孜孜不倦地纠正那些随意的坏习惯，防止她在生产环境中闯祸。虽然看起来很严厉，但其实都是为了杰西好……大概吧。
+  imageUrl: '/LangGalMemes/characters/ts_chan/cover.png'
+  color: '#3178C6'
+  emojiPacks:
+    - name: '系列 0: 严格模式'
+      path: '/LangGalMemes/characters/ts_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'

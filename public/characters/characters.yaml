@@ -570,3 +570,24 @@
     source: 'Design inspired by r/MoeMorphism'
     url: 'https://www.reddit.com/r/MoeMorphism/comments/atabhq/programming_languages_moeifed/'
     copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
+
+- id: 26
+  name: 'Tessa'
+  techName: 'TypeScript'
+  officialUrl: 'https://www.typescriptlang.org/'
+  tags: ['Language', 'Web', 'Typed', 'Microsoft']
+  tagline: "Structure is not a constraint, it's liberation. 📘"
+  description: >
+    A dignified academic and the disciplined guardian of the chaotic Jessie. Sharing a lineage with the magical girl Sharu (C#), she brings order to the web.
+
+    She follows Jessie everywhere, tirelessly correcting her messy habits and ensuring she doesn't break things in production. While she seems strict, she just wants to help... mostly.
+  imageUrl: '/LangGalMemes/characters/ts_chan/cover.png'
+  color: '#3178C6'
+  emojiPacks:
+    - name: 'Series 0: Strict Mode'
+      path: '/LangGalMemes/characters/ts_chan/series_0'
+      pattern: 'emoji_{i}.png'
+      range: [1, 24]
+  credits:
+    source: 'Original Character'
+    copyright: 'Original Concept: Community / AI Gen: Nano Banana Pro'
